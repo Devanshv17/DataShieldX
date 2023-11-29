@@ -6,6 +6,7 @@ to do
 
 
 - control panel:
+	- tabs along the top instead of the side
 	- teams/projects being worked on
 		- students in those
 		- environment/extensions for those
