@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 interface AppCardProps {
   name?: string;
@@ -14,7 +15,7 @@ interface AppCardProps {
   image?: string; // New image prop
 }
 
-const AppCard: React.FC<AppCardProps> = ({ name = 'Lizard', description, image }) => {
+const StoreAppCard: React.FC<AppCardProps> = ({name = 'Lizard', description, image }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia component="img" alt="Card image" height="140" image={image} />
@@ -28,11 +29,11 @@ const AppCard: React.FC<AppCardProps> = ({ name = 'Lizard', description, image }
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Launch</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Request</Button>
+        <Link to={`/${name}`}><Button variant="contained">Learn more</Button></Link>
       </CardActions>
     </Card>
   );
 };
 
-export default AppCard;
+export default StoreAppCard;
