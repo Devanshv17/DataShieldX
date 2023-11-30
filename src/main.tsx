@@ -4,7 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import { App } from './App';
 import Dashboard from "./client_dashboard";
 import Instance from "./client_instance";
-import './resets.css';
+import { setChonkyDefaults } from 'chonky';
+import { ChonkyIconFA } from 'chonky-icon-fontawesome';
+// import './resets.css';
+setChonkyDefaults({ iconComponent: ChonkyIconFA });
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
