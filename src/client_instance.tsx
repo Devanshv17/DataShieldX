@@ -2,33 +2,49 @@ import { FullFileBrowser } from 'chonky';
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, Dialog, DialogTitle} from "@mui/material";
 import {ExpandMore as ExpandMoreIcon} from "@mui/icons-material"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Extensions from "./client_extensions";
-import Storage from "./client_storage";
-
-
-function Logs() {
-	return (<Card style={{
-		width:"90%",
-		alignSelf:"center",
-		padding: "10px",
-		backgroundColor:"#ddd",
-		fontFamily:'"Courier New", monospace',
-	}}>
-	Hello
-	Goodbye		
-	</Card>)
-}
+import { startTeamServer, stopTeamServer } from '../callbacks/client';
+import Logs from './logs';
+// import Storage from "./client_storage";
 
 export default function Inst(props: any) {
 	const {id} = useParams();
-	const [started, setStarted] = useState(false);
+	const [started, setStarted] = useState(() => {
+		// Initialize state from localStorage or default to false
+		const storedState = localStorage.getItem(`team${id}_started`);
+		return storedState ? JSON.parse(storedState) : false;
+	});
 	const [extDiag, toggleExtDiag] = useState(false);
 	// const [filesDiag, toggleFilesDiag] = useState(false);
 	const [files, setFiles] = useState([]);
 	const [folderChain, setChain] = useState([]);
 	const url = "google.com";
 	const nav = useNavigate();
+
+	useEffect(() => {
+		// Save the current state to localStorage whenever it changes
+		localStorage.setItem(`team${id}_started`, JSON.stringify(started));
+	  }, [started, id]);
+
+	const handleButtonClick = async () => {
+		try {
+		  if (started) {
+			// Force Stop
+			await stopTeamServer(id);
+		  } else {
+			// Start
+			await startTeamServer(id);
+		  }
+	
+		  // Update the state after successful request
+		  setStarted(!started);
+		} catch (error) {
+		  console.error('Error:', error);
+		  // Handle the error as needed
+		}
+	  };	
+
 	return (
 		<div style={{
 			width:"100vw",
@@ -78,8 +94,8 @@ export default function Inst(props: any) {
 				}}>
 				<h3>URL to server: {url}</h3>
 				<h3>Logs: </h3>
-				<Logs />
-				<Button variant="contained" onClick={() => setStarted(!started)}>{started ? "Force Stop" : "Start"}</Button>
+				<Logs teamID={id}/>
+				<Button variant="contained" onClick={handleButtonClick}>{started ? "Force Stop" : "Start"}</Button>
 				</Box>
 				</AccordionDetails>
 				</Accordion>
