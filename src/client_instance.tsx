@@ -29,20 +29,22 @@ export default function Inst(props: any) {
 
 	const handleButtonClick = async () => {
 		try {
-		  if (started) {
-			// Force Stop
-			await stopTeamServer(id);
-		  } else {
-			// Start
-			await startTeamServer(id);
-		  }
-	
-		  // Update the state after successful request
-		  setStarted(!started);
+		if (id !== undefined){
+			if (started) {
+				// Force Stop
+				await stopTeamServer(parseInt(id));
+			  } else {
+				// Start
+				await startTeamServer(parseInt(id));
+			  }
+		
+			  // Update the state after successful request
+			  setStarted(!started);
+			}
 		} catch (error) {
-		  console.error('Error:', error);
-		  // Handle the error as needed
-		}
+			console.error('Error:', error);
+			// Handle the error as needed
+		  }
 	  };	
 
 	return (
@@ -69,7 +71,12 @@ export default function Inst(props: any) {
 				<Dialog open={extDiag} onClose={()=>{toggleExtDiag(!extDiag)}} fullWidth={true} maxWidth="lg">
 					<Box sx={{width: "100%"}}>
 					<DialogTitle>Team {id} server extensions</DialogTitle>
-					<Extensions teamid={id}/>
+					{id !== undefined ? (
+						<Extensions teamid={parseInt(id)} />
+						) : (
+						// Optional: Render something else or nothing when id is undefined
+						null
+					)}
 					</Box>
 				</Dialog>
 				{/*<Dialog open={filesDiag} onClose={() => {toggleFilesDiag(!filesDiag)}} fullWidth={true} maxWidth="lg">
@@ -80,7 +87,7 @@ export default function Inst(props: any) {
 								</Dialog>*/}
 				<Box sx={{width:"100%"}}>
 				<h2>Team Files</h2>
-				<FullFileBrowser files={files} folderChain={folderChain}/>
+				{/* <FullFileBrowser files={files} folderChain={folderChain}/> */}
 				</Box>
 				<Accordion sx={{width:"100%"}}>
 				<AccordionSummary expandIcon={<ExpandMoreIcon />}><h5>Advanced Configuration</h5></AccordionSummary>
@@ -94,7 +101,13 @@ export default function Inst(props: any) {
 				}}>
 				<h3>URL to server: {url}</h3>
 				<h3>Logs: </h3>
-				<Logs teamID={id}/>
+				{id !== undefined ? (
+					// Parse id to a number and pass it to teamid
+					<Logs teamID={parseInt(id)}/>
+					) : (
+					// Optional: Render something else or nothing when id is undefined
+					null
+				)}
 				<Button variant="contained" onClick={handleButtonClick}>{started ? "Force Stop" : "Start"}</Button>
 				</Box>
 				</AccordionDetails>

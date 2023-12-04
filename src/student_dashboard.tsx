@@ -78,11 +78,12 @@ const AppGrid = () => {
   const [filteredCards, setFilteredCards] = useState(cardData);
   const [curr, setCurr] = useState("Home");
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.currentTarget.value);
   };
+  
 
-  const handleSearchSubmit = (event) => {
+  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Filter cards based on the search value
     const filtered = cardData.filter((card) =>

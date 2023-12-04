@@ -56,10 +56,10 @@ export default function App(props = {}) {
       <AppWindow />
       :
       ""}
-      {curr == "Storage" ?
+      {/* {curr == "Storage" ?
       <Storage />
       :
-      ""}
+      ""} */}
       </Box>
     </div>
   );

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Card } from "@mui/material";
 import { fetchLogs } from '../callbacks/client'; // Import your fetchLogs function
 
-function Logs({ teamID }) {
+interface AppProps {
+	teamID: number;
+}
+
+const Logs: React.FC<AppProps> = ({ teamID }) => {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {

@@ -23,7 +23,7 @@ function Logs() {
 	</Card>)
 }
 
-export default function Inst(props: any) {
+export default function StudentInstance(props: any) {
 	const {id} = useParams();
 	const [started, setStarted] = useState(false);
 	const [diag, toggleDiag] = useState(false);
@@ -44,7 +44,7 @@ export default function Inst(props: any) {
 				padding: 2,
 			}}>
 				<span>
-					<Link to="/"><Button variant="contained" style={{display:"inline"}}>Back</Button></Link>
+					<Link to="/student/dashboard"><Button variant="contained" style={{display:"inline"}}>Back</Button></Link>
 					<h1 style={{display:"inline", marginLeft:"30px"}}>{`${id}`}</h1>
 				</span>
 				<Paper elevation={3} style={{ padding: '20px', margin: '20px' }}>

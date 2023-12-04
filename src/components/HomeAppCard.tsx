@@ -30,7 +30,7 @@ const AppCard: React.FC<AppCardProps> = ({name = 'Lizard', description, image })
       </CardContent>
       <CardActions>
         <Button size="small">Launch</Button>
-        <Link to={`/${name}`}><Button variant="contained">Learn more</Button></Link>
+        <Link to={`/student/${name}`}><Button variant="contained">Learn more</Button></Link>
       </CardActions>
     </Card>
   );

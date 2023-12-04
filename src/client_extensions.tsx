@@ -1,7 +1,11 @@
 import { Button, Card } from "@mui/material";
 import { useState } from "react";
 
-export default function App({teamid}) {
+interface AppProps {
+	teamid: number;
+}
+
+const Extensions: React.FC<AppProps> = ({ teamid }) => {
 	console.log(teamid);
 	const [ext, setExt] = useState([
 		{
@@ -32,3 +36,5 @@ export default function App({teamid}) {
 		))}
 	</div>);
 }
+
+export default Extensions

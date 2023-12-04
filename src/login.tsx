@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -11,13 +13,37 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 
 export default function SignInSide() {
-  const handleSubmit = (event) => {
+  const [loginError, setLoginError] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    try {
+      const response = await fetch('http://localhost:8000/student/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          team: parseInt(data.get("team") as string),
+          username: data.get("username") as string,
+          password: data.get("password") as string,
+        }),
+      });
+
+      if (response.ok) {
+        setLoginError(false);
+        // Redirect to /student/dashboard upon successful login
+        navigate('/student/dashboard');
+      } else {
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setLoginError(true);
+    }
   };
 
   return (
@@ -50,21 +76,30 @@ export default function SignInSide() {
               <Typography component="h1" variant="h5">
                 Sign in
               </Typography>
-              <Box
-                component="form"
+              <form
                 noValidate
                 onSubmit={handleSubmit}
-                sx={{ mt: 1 }}
-                style={{height:"100%"}}
+                // sx={{ mt: 1 }}
+                style={{ height: "100%" }}
               >
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="team"
+                  label="Team"
+                  name="team"
+                  autoComplete="team"
+                  autoFocus
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
                   autoFocus
                 />
                 <TextField
@@ -77,33 +112,31 @@ export default function SignInSide() {
                   id="password"
                   autoComplete="current-password"
                 />
-                <Box
-                    component="form"
-                    noValidate
-                    onSubmit={handleSubmit}
-                    sx={{ mt: 3, textAlign: 'center' }}
-                    >
-                    <Button
-                        type="submit"
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                    >
-                        Sign In
-                    </Button>
-                </Box>
-                <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="#" variant="body2">
-                      {"Don't have an account? Sign Up"}
-                    </Link>
-                  </Grid>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Sign In
+                </Button>
+              </form>
+              {loginError && (
+                <Typography variant="body2" color="error">
+                  Incorrect username or password
+                </Typography>
+              )}
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
                 </Grid>
-              </Box>
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
             </Box>
           </Grid>
           <Grid
