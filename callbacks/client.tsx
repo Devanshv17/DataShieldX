@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const startTeamServer = async (teamId: number) => {
-  const port = 808 + teamId;
+  const port = 8080 + teamId;
   try {
     await axios.post(`http://localhost:8000/start/${teamId}/${port}`);
   } catch (error) {

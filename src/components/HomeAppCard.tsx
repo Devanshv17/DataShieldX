@@ -9,13 +9,16 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 interface AppCardProps {
+  id: number
   name?: string;
   description?: string;
   buttonText?: string;
   image?: string; // New image prop
 }
 
-const AppCard: React.FC<AppCardProps> = ({name = 'Lizard', description, image }) => {
+const AppCard: React.FC<AppCardProps> = ({id, name = 'Lizard', description, image }) => {
+  const port = 8080+id;
+  const reqUrl = `http://localhost:8081`;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia component="img" alt="Card image" height="140" image={image} />
@@ -29,8 +32,10 @@ const AppCard: React.FC<AppCardProps> = ({name = 'Lizard', description, image })
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Launch</Button>
-        <Link to={`/student/${name}`}><Button variant="contained">Learn more</Button></Link>
+      <a href={reqUrl}>
+        <Button>Launch</Button>
+      </a>
+        <Link to={`/student/app/${name}`}><Button variant="contained">Learn more</Button></Link>
       </CardActions>
     </Card>
   );

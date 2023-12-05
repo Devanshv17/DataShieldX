@@ -11,66 +11,15 @@ import StoreAppCard from './components/StoreAppCard';
 
 const cardData = [
   {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
+    name: 'VS Code',
+    description: 'Code editor',
+    image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
   },
   {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
+    name: 'Figma',
+    description: 'Designing app',
+    image: 'https://imgs.search.brave.com/FdIGGfc3R9dZX9ggCvuTLVjuAb0LfOkNMSxiNmq0NrE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/ZmlnbWEuc3Zn.svg',
   },
-  {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
-  },
-  {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
-  },
-  {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
-  },
-  {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
-  },
-  {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
-  },
-  {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
-  },
-  {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
-  },
-  {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
-  },
-  {
-    name: 'Card 1',
-    description: 'Content for Card 1',
-    image: '../photos/IMG_2043.jpg',
-  },
-  {
-    name: 'Card 2',
-    description: 'Content for Card 2',
-    image: '../photos/IMG_2044.jpg',
-  },
-  // ... (other card data)
 ];
 
 const AppGrid = () => {
@@ -144,6 +93,7 @@ const AppGrid = () => {
                 {filteredCards.map((card, index) => (
                   <Grid item key={index} xs={12} sm={6} md={4}>
                     <AppCard
+                      id={index}
                       name={card.name}
                       description={card.description}
                       image={card.image}
@@ -191,6 +141,7 @@ const AppGrid = () => {
                 {filteredCards.map((card, index) => (
                   <Grid item key={index} xs={12} sm={6} md={4}>
                     <StoreAppCard
+                      linkTo={`/student/app/${card.name}`}
                       name={card.name}
                       description={card.description}
                       image={card.image}

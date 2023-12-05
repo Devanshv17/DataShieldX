@@ -7,9 +7,9 @@ import Dashboard from "./client_dashboard";
 import Instance from "./client_instance";
 import StudentDashboard from "./student_dashboard"
 import StudentInstance from "./student_instance"
+import ClientAppInstance from './client_app_instance';
 import { setChonkyDefaults } from 'chonky';
 import { ChonkyIconFA } from 'chonky-icon-fontawesome';
-// import './resets.css';
 // setChonkyDefaults({ iconComponent: ChonkyIconFA });
 
 createRoot(document.getElementById('root')!).render(
@@ -28,18 +28,21 @@ createRoot(document.getElementById('root')!).render(
       element:<StudentDashboard />,
     },
     {
-      path:"/student/:id",
+      path:"/student/app/:id",
       element:<StudentInstance />,
     },
-    // {
-    //   path:"/",
-    //   element:<Dashboard />,
-    // },
-    // {
-    //   path:"/:id",
-    //   element:<Instance />
-    // },
-
-      ])} />
+    {
+      path:"/client/app/:id",
+      element:<ClientAppInstance />,
+    },
+    {
+      path:"/client/dashboard",
+      element:<Dashboard />,
+    },
+    {
+      path:"/:id",
+      element:<Instance />
+    },
+    ])} />
   </StrictMode>,
 );
