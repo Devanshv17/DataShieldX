@@ -1,32 +1,46 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
+import { Tabs, Tab, Paper, IconButton, styled } from '@mui/material';
 
 
-const Navbar = () => {
+const CustomPaper = styled(Paper)({
+  display: "flex",
+  backgroundColor: "#FFFFFF",
+  fontSize: "20px",
+  fontFamily: "'Montseraat'",
+  alignItems: "center",
+  gap: "10px",
+  paddingLeft: "10px",
+  width: "100%",
+  height: "75px",
+  marginTop: "0",
+  boxShadow: "0px 0px 5px 0px #D1D1D1",
+  borderRadius: "10px",
+});
+
+const CustomIconButton = styled(IconButton)({
+  marginRight: "10px",
+});
+
+interface NavbarProps {
+  currentTab: string;
+  onTabChange: (event: React.ChangeEvent<{}>, newValue: string) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ currentTab, onTabChange }) => {
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          {/* Logo and Options */}
-          <div className="logo-and-options">
-            <img src="Unknown.png" alt="Your Logo" className="logo" />
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">Chat</Button>
-            <Button color="inherit">App</Button>
-          </div>
+    <CustomPaper elevation={1}>
+      <img src="../photos/App-logo.jpg" alt="Company Logo" style={{ height: "40px" }} />
+      <p>v0.0.13</p>
 
-          {/* New profile section */}
-          <div className="profile-section">
-            {/* <img src="logo512.png" alt="Profile" className="profile-picture" /> */}
-            <div className="profile-name">John Doe</div>
-          </div>
-        </Toolbar>
-      </AppBar>
+      <Tabs value={currentTab} onChange={onTabChange} sx={{ flexGrow: 1 }}>
+        <Tab label="Home" value="Home" />
+        <Tab label="Chat" value="Chat" />
+        <Tab label="Apps" value="Apps" />
+        
+      </Tabs>
 
-      {/* Other components and content */}
-    </div>
+      
+    </CustomPaper>
   );
 };
 

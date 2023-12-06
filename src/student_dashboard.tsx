@@ -6,8 +6,9 @@ import AppCard from './components/HomeAppCard';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import {Box, Button, Card, Paper, Tab, Tabs} from "@mui/material";
+import { Box, Paper, Tabs, Tab } from "@mui/material";
 import StoreAppCard from './components/StoreAppCard';
+import Navbar from './components/Navbar';
 
 const cardData = [
   {
@@ -22,15 +23,16 @@ const cardData = [
   },
 ];
 
+// AppGri
+
 const AppGrid = () => {
   const [searchValue, setSearchValue] = useState('');
   const [filteredCards, setFilteredCards] = useState(cardData);
   const [curr, setCurr] = useState("Home");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.currentTarget.value);
+    setSearchValue(event.target.value);
   };
-  
 
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,123 +43,113 @@ const AppGrid = () => {
     setFilteredCards(filtered);
   };
 
+  const handleTabChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+    setCurr(newValue);
+  };
+
   return (
     <>
       <div style={{
-      backgroundColor:"#f6f6f6",
-      width:"100%",
-      height:"100%"
-    }}>
-      <Paper elevation={1} style={{
-        display:"flex",
-        alignItems:"center",
-        gap:"20px",
-        paddingLeft:"10px",
-        width:"100%",
-        height:"50px",
-        marginTop:"0",
+        backgroundColor: "#f6f6f6",
+        width: "100%",
+        height: "100%"
       }}>
-        <span style={{height:"30px", backgroundColor:"#ddd"}}>Company Name</span>
-        <Tabs value={curr} onChange={(_, n) => {setCurr(n)}}>
-          <Tab label={"Home"} value={"Home"}/>
-          <Tab label={"Chat"} value={"Chat"}/>
-          <Tab label={"Apps"} value={"Apps"}/>
-        </Tabs>
-      </Paper>
-      {curr == "Home" ?
-      <Box sx={{mt:5, padding: 1}}>
-        <h1>My Apps</h1>
-        {
-          <Container maxWidth="xl">
-        <Box border="1px solid #ddd" borderRadius="4px" p={2}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Box mb={2} display="flex" justifyContent="flex-start">
-                <form onSubmit={handleSearchSubmit} style={{ display: 'flex' }}>
-                  <div style={{ position: 'relative' }}>
-                    <IconButton type="submit" sx={{ p: '10px' }}>
-                      <SearchIcon />
-                    </IconButton>
-                    <TextField
-                      label="Search..."
-                      value={searchValue}
-                      onChange={handleSearchChange}
-                      sx={{ ml: 1, width: '200px' }}
-                    />
-                  </div>
-                </form>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid container spacing={2}>
-                {filteredCards.map((card, index) => (
-                  <Grid item key={index} xs={12} sm={6} md={4}>
-                    <AppCard
-                      id={index}
-                      name={card.name}
-                      description={card.description}
-                      image={card.image}
-                    />
+
+        <Navbar
+          currentTab={curr}
+          onTabChange={handleTabChange}
+        />
+
+        {curr === 'Home' ?
+          <Box sx={{ mt: 5, padding: 1 }}>
+            <h1>My Apps</h1>
+            <Container maxWidth="xl">
+              <Box border="1px solid #ddd" borderRadius="4px" p={2}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Box mb={2} display="flex" justifyContent="flex-start">
+                      <form onSubmit={handleSearchSubmit} style={{ display: 'flex' }}>
+                        <div style={{ position: 'relative' }}>
+                          <IconButton type="submit" sx={{ p: '10px' }}>
+                            <SearchIcon />
+                          </IconButton>
+                          <TextField
+                            label="Search..."
+                            value={searchValue}
+                            onChange={handleSearchChange}
+                            sx={{ ml: 1, width: '200px' }}
+                          />
+                        </div>
+                      </form>
+                    </Box>
                   </Grid>
-                ))}
-              </Grid>
-            </Grid>
-          </Grid>
-        </Box>
-      </Container>
-        }
-      </Box>
-      :
-      ""}
-      {curr == "Chat" ?
-      <></>
-      :
-      ""}
-      {curr == "Apps" ?
-      <>
-        {
-          <Container maxWidth="xl">
-        <Box border="1px solid #ddd" borderRadius="4px" p={2}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Box mb={2} display="flex" justifyContent="flex-start">
-                <form onSubmit={handleSearchSubmit} style={{ display: 'flex' }}>
-                  <div style={{ position: 'relative' }}>
-                    <IconButton type="submit" sx={{ p: '10px' }}>
-                      <SearchIcon />
-                    </IconButton>
-                    <TextField
-                      label="Search..."
-                      value={searchValue}
-                      onChange={handleSearchChange}
-                      sx={{ ml: 1, width: '200px' }}
-                    />
-                  </div>
-                </form>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid container spacing={2}>
-                {filteredCards.map((card, index) => (
-                  <Grid item key={index} xs={12} sm={6} md={4}>
-                    <StoreAppCard
-                      linkTo={`/student/app/${card.name}`}
-                      name={card.name}
-                      description={card.description}
-                      image={card.image}
-                    />
+                  <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                      {filteredCards.map((card, index) => (
+                        <Grid item key={index} xs={12} sm={6} md={4}>
+                          <AppCard
+                            id={index}
+                            name={card.name}
+                            description={card.description}
+                            image={card.image}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
                   </Grid>
-                ))}
-              </Grid>
-            </Grid>
-          </Grid>
-        </Box>
-      </Container>
-        }
-      </>
-      :
-      ""}
-    </div>
+                </Grid>
+              </Box>
+            </Container>
+          </Box>
+          :
+          ""}
+        {curr === 'Chat' ?
+          <></>
+          :
+          ""}
+        {curr === "Apps" ?
+          <>
+            <Container maxWidth="xl">
+              <Box border="1px solid #ddd" borderRadius="4px" p={2}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Box mb={2} display="flex" justifyContent="flex-start">
+                      <form onSubmit={handleSearchSubmit} style={{ display: 'flex' }}>
+                        <div style={{ position: 'relative' }}>
+                          <IconButton type="submit" sx={{ p: '10px' }}>
+                            <SearchIcon />
+                          </IconButton>
+                          <TextField
+                            label="Search..."
+                            value={searchValue}
+                            onChange={handleSearchChange}
+                            sx={{ ml: 1, width: '200px' }}
+                          />
+                        </div>
+                      </form>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                      {filteredCards.map((card, index) => (
+                        <Grid item key={index} xs={12} sm={6} md={4}>
+                          <StoreAppCard
+                            linkTo={`/student/app/${card.name}`}
+                            name={card.name}
+                            description={card.description}
+                            image={card.image}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Container>
+          </>
+          :
+          ""}
+      </div>
     </>
   );
 };
