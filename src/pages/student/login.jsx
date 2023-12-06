@@ -14,7 +14,7 @@ export default function SignInSide() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         try {
-            const response = await fetch('http://localhost:8000/student/login', {
+            const response = await fetch(`${process.env.SERVER}/student/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

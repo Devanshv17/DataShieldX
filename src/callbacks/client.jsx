@@ -2,7 +2,7 @@ import axios from 'axios';
 export const startTeamServer = async (teamId) => {
     const port = 8080 + teamId;
     try {
-        await axios.post(`http://localhost:8000/start/${teamId}/${port}`);
+        await axios.post(`${process.env.SERVER}/start/${teamId}/${port}`);
     }
     catch (error) {
         console.error('Error starting team:', error);
@@ -11,7 +11,7 @@ export const startTeamServer = async (teamId) => {
 };
 export const stopTeamServer = async (teamId) => {
     try {
-        await axios.post(`http://localhost:8000/stop/${teamId}`);
+        await axios.post(`${process.env.SERVER}/stop/${teamId}`);
     }
     catch (error) {
         console.error('Error stopping team:', error);
@@ -20,7 +20,7 @@ export const stopTeamServer = async (teamId) => {
 };
 export const fetchLogs = async (teamId) => {
     try {
-        const response = await axios.get(`http://localhost:8000/logs/${teamId}`);
+        const response = await axios.get(`${process.env.SERVER}/logs/${teamId}`);
         return response.data; // Assuming the response contains the logs
     }
     catch (error) {

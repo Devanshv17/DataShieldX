@@ -36,7 +36,7 @@ export default function App(props = {}) {
         {projects.map((el, idx) => (<Card sx={{ margin: 2, padding: 2 }}>
             <h1>{el.name}</h1>
             <h5>{el.text}</h5>
-            <Link href={`/${idx}`}><Button variant="contained">View details</Button></Link>
+            <Link href={`/client/instance?id=${idx}`}><Button variant="contained">View details</Button></Link>
           </Card>))}</>
             :
                 ""}
