@@ -9,9 +9,10 @@ import Logs from '@/logs';
 //this used to be client_instance.tsx
 
 export default function Inst(props) {
-    const id = (new URLSearchParams(window.location.search)).get("id");
+    const [id, setId] = useState(0);
     const [started, setStarted] = useState(() => {
         // Initialize state from localStorage or default to false
+        if (typeof window === 'undefined') return false;
         const storedState = localStorage.getItem(`team${id}_started`);
         return storedState ? JSON.parse(storedState) : false;
     });
@@ -20,9 +21,14 @@ export default function Inst(props) {
     const [files, setFiles] = useState([]);
     const [folderChain, setChain] = useState([]);
     const url = "google.com";
+    
+    useEffect(() => {
+    	setId((new URLSearchParams(window.location.search)).get("id"));
+    }, []);
+    
     useEffect(() => {
         // Save the current state to localStorage whenever it changes
-        localStorage.setItem(`team${id}_started`, JSON.stringify(started));
+        if (typeof window !== 'undefined') localStorage.setItem(`team${id}_started`, JSON.stringify(started));
     }, [started, id]);
     const handleButtonClick = async () => {
         try {

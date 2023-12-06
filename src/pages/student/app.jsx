@@ -1,11 +1,16 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, Typography, Button, Paper, Grid, } from '@mui/material';
 export default function StudentInstance(props) {
-    const id = (new URLSearchParams(window.location.search)).get("id");
+    const [id, setId] = useState(0);
     const [started, setStarted] = useState(false);
     const [diag, toggleDiag] = useState(false);
     const url = "google.com";
+    
+    useEffect(() => {
+    	setId((new URLSearchParams(window.location.search)).get("id"));
+    }, []);
+    
     return (<div style={{
             width: "100%",
             height: "100%",
