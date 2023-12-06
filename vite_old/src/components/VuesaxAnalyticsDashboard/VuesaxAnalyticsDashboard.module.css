@@ -1,0 +1,2852 @@
+.rightArrow.rightArrow {
+  position: absolute;
+  left: 95.655%;
+  right: 3.048%;
+  top: 5.4217%;
+  bottom: 93.3735%;
+  width: initial;
+  height: initial;
+}
+.rightArrow2.rightArrow2 {
+  position: absolute;
+  left: 96.4332%;
+  right: 2.2698%;
+  top: 5.9036%;
+  bottom: 92.8916%;
+  width: initial;
+  height: initial;
+}
+.rightArrow3.rightArrow3 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 13.6935%;
+  bottom: 85.0503%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.rightArrow4.rightArrow4 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 32.5377%;
+  bottom: 66.206%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.rightArrow5.rightArrow5 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 29.2746%;
+  bottom: 68.1347%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.rightArrow6.rightArrow6 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 55.5319%;
+  bottom: 42.3404%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.rightArrow7.rightArrow7 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 87.0213%;
+  bottom: 10.8511%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.rightArrow8.rightArrow8 {
+  transform-origin: top left;
+  position: absolute;
+  left: 97.3558%;
+  right: -2.1635%;
+  top: 23.617%;
+  bottom: 74.2553%;
+  width: initial;
+  height: initial;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.root {
+  position: relative;
+  width: 1920px;
+  height: 1400px;
+  align-items: flex-start;
+  background-color: #fff;
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1209px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #00000014;
+}
+.rectangle {
+  position: absolute;
+  left: 277px;
+  top: 0;
+  width: 1643px;
+  height: 1400px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 8px 0px #00000014;
+}
+.subscribersCard {
+  position: absolute;
+  left: 1113.8959px;
+  top: 120px;
+  width: 372px;
+  height: 300px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangleCopy {
+  position: absolute;
+  left: 0.028%;
+  right: 0.2408%;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.chart {
+  position: absolute;
+  left: 0%;
+  right: 0.0841%;
+  top: 64%;
+  bottom: 0;
+  overflow: visible;
+}
+.icon {
+  width: 100%;
+  height: 100%;
+}
+.chartLine {
+  position: absolute;
+  left: 0.121%;
+  right: 0.1478%;
+  top: 64%;
+  bottom: 11.3333%;
+  overflow: visible;
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+}
+.subscribersGained {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.6301%;
+  right: 49.4344%;
+  top: calc(50% - -7px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._926k {
+  color: #2c2c2c;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.6301%;
+  right: 70.9398%;
+  top: calc(50% - 29px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval {
+  position: absolute;
+  left: 8.6301%;
+  right: 74.7032%;
+  top: 8.3333%;
+  bottom: 71%;
+  overflow: visible;
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+}
+.users {
+  position: absolute;
+  left: 49.1041px;
+  top: 45px;
+  width: 28px;
+  height: 22px;
+  overflow: visible;
+}
+.icon4 {
+  width: 100%;
+  height: 100%;
+}
+.ordersCard {
+  position: absolute;
+  left: 1514px;
+  top: 120px;
+  width: 372px;
+  height: 300px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangleCopy2 {
+  position: absolute;
+  left: 0;
+  right: 0.2688%;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.ordersReceived {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.3333%;
+  right: 56.1828%;
+  top: calc(50% - -7px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._975K {
+  color: #2c2c2c;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.3333%;
+  right: 70.9677%;
+  top: calc(50% - 29px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.ovalCopy {
+  position: absolute;
+  left: 8.3333%;
+  right: 75%;
+  top: 8.3333%;
+  bottom: 71%;
+  overflow: visible;
+}
+.icon5 {
+  width: 100%;
+  height: 100%;
+}
+.shoppingBag {
+  position: absolute;
+  left: 51px;
+  top: 44px;
+  width: 22px;
+  height: 25px;
+  overflow: visible;
+}
+.icon6 {
+  width: 100%;
+  height: 100%;
+}
+.path3 {
+  position: absolute;
+  left: 0.1766%;
+  right: 0.0922%;
+  top: 64%;
+  bottom: 6.6667%;
+  overflow: visible;
+}
+.icon7 {
+  width: 100%;
+  height: 100%;
+}
+.path2 {
+  position: absolute;
+  left: 0.1766%;
+  right: 0.361%;
+  top: 64%;
+  bottom: 7.3333%;
+  overflow: visible;
+}
+.icon8 {
+  width: 100%;
+  height: 100%;
+}
+.congratulationsCard {
+  position: absolute;
+  left: 314px;
+  top: 120px;
+  width: 771px;
+  height: 300px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-image: linear-gradient(248.7deg, #a59bffff 0%, #7e72f2ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.congratulationsJohn {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 30.2205%;
+  right: 29.4423%;
+  top: calc(50% - -30px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval2 {
+  position: absolute;
+  left: 42.9313%;
+  right: 42.8016%;
+  top: 12.6667%;
+  bottom: 50.6667%;
+  overflow: visible;
+  filter: drop-shadow(0px 2px 8px #6050f441);
+}
+.icon9 {
+  width: 100%;
+  height: 100%;
+}
+.award {
+  position: absolute;
+  left: 372px;
+  top: 71px;
+  width: 28px;
+  height: 44px;
+  overflow: visible;
+}
+.icon10 {
+  width: 100%;
+  height: 100%;
+}
+.youHaveDone576 {
+  color: #fff;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 10.1167%;
+  right: 10.1167%;
+  top: calc(50% - -90px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.decoreRightDa0ab5cd {
+  position: absolute;
+  left: 74.4488%;
+  right: 0;
+  top: 0.3333%;
+  bottom: 72%;
+  background-image:/* webpackIgnore: true */ url('/assets/decoreRightDa0ab5cd.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.decoreLeft2d9d23e0 {
+  position: absolute;
+  left: 0;
+  right: 70.8171%;
+  top: 0.3333%;
+  bottom: 61%;
+  background-image:/* webpackIgnore: true */ url('/assets/decoreLeft2d9d23e0.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sessionsCard {
+  position: absolute;
+  left: 313px;
+  top: 450px;
+  width: 771px;
+  height: 415px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 1px 8px 0px #0000;
+}
+.goal1000000 {
+  color: #606060;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.2802%;
+  right: 78.9883%;
+  top: calc(50% - -115.5px);
+  height: 18px;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.retention90 {
+  color: #606060;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.2802%;
+  right: 76.0052%;
+  top: calc(50% - -153.5px);
+  height: 18px;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.users100K {
+  color: #606060;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 52.2698%;
+  right: 34.5006%;
+  top: calc(50% - -115.5px);
+  height: 18px;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.duration1yr {
+  color: #606060;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 52.1401%;
+  right: 30.7393%;
+  top: calc(50% - -153.5px);
+  height: 18px;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.rectangle4 {
+  position: absolute;
+  left: 4.2802%;
+  right: 51.6213%;
+  top: 81.2048%;
+  bottom: 17.8313%;
+  border-radius: 2.5px;
+  background-color: #f2f0fd;
+}
+.rectangle5 {
+  position: absolute;
+  left: 4.2802%;
+  right: 73.8003%;
+  top: 81.2048%;
+  bottom: 17.8313%;
+  border-radius: 2.5px;
+  background-color: #7467f0;
+}
+.rectangle6 {
+  position: absolute;
+  left: 52.0104%;
+  right: 3.8911%;
+  top: 81.2048%;
+  bottom: 17.8313%;
+  border-radius: 2.5px;
+  background-color: #fff6ee;
+}
+.rectangle7 {
+  position: absolute;
+  left: 52.0104%;
+  right: 26.07%;
+  top: 81.2048%;
+  bottom: 17.8313%;
+  border-radius: 2.5px;
+  background-color: #ff9f43;
+}
+.rectangle8 {
+  position: absolute;
+  left: 4.2802%;
+  right: 51.6213%;
+  top: 90.6024%;
+  bottom: 8.4337%;
+  border-radius: 2.5px;
+  background-color: #fdefef;
+}
+.rectangle9 {
+  position: absolute;
+  left: 4.2802%;
+  right: 73.8003%;
+  top: 90.6024%;
+  bottom: 8.4337%;
+  border-radius: 2.5px;
+  background-color: #ea5455;
+}
+.progressBar4 {
+  position: absolute;
+  left: 401px;
+  top: 376px;
+  width: 340px;
+  height: 4px;
+  overflow: visible;
+}
+.icon11 {
+  width: 100%;
+  height: 100%;
+}
+.rectangle10 {
+  position: absolute;
+  left: 91.6991%;
+  right: 5.4475%;
+  top: 63.1325%;
+  bottom: 32.0482%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle11 {
+  position: absolute;
+  left: 85.3437%;
+  right: 11.8029%;
+  top: 53.494%;
+  bottom: 32.0482%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle12 {
+  position: absolute;
+  left: 78.9883%;
+  right: 18.1582%;
+  top: 44.0964%;
+  bottom: 31.8072%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle13 {
+  position: absolute;
+  left: 72.7626%;
+  right: 24.3839%;
+  top: 34.2169%;
+  bottom: 32.0482%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle14 {
+  position: absolute;
+  left: 66.4073%;
+  right: 30.7393%;
+  top: 25.0602%;
+  bottom: 32.0482%;
+  border-radius: 24px 24px 0 0;
+  background-color: #7467f0;
+}
+.rectangle15 {
+  position: absolute;
+  left: 59.9222%;
+  right: 37.2244%;
+  top: 44.0964%;
+  bottom: 31.8072%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle16 {
+  position: absolute;
+  left: 53.6965%;
+  right: 43.4501%;
+  top: 53.7349%;
+  bottom: 31.8072%;
+  border-radius: 24px 24px 0 0;
+  background-color: #f2f0fd;
+}
+.rectangle17 {
+  position: absolute;
+  left: 4.2802%;
+  right: 51.6213%;
+  top: 59.2771%;
+  bottom: 32.0482%;
+  border-radius: 4px;
+  background-color: #7467f0;
+}
+.viewDetails {
+  color: #fff;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 19.9741%;
+  right: 67.1855%;
+  top: calc(50% - -55.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.path {
+  position: absolute;
+  left: 4.2802%;
+  right: 4.1505%;
+  top: 73.012%;
+  bottom: 26.8675%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: visible;
+}
+.icon12 {
+  width: 100%;
+  height: 100%;
+}
+._27K {
+  color: #2c2c2c;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.2802%;
+  right: 87.808%;
+  top: calc(50% - 168.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.avgSessions {
+  color: #2c2c2c;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.2802%;
+  right: 82.3606%;
+  top: calc(50% - 141.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._52VsLast7Days {
+  position: absolute;
+  left: 4.2802%;
+  right: 76.0052%;
+  top: calc(50% - 105.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.labelWrapper {
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label {
+  color: #2dcd7a;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.label2 {
+  color: #2c2c2c;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.last7Days {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 84.9546%;
+  right: 5.0584%;
+  top: calc(50% - 185px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.ticketsCard {
+  position: absolute;
+  left: 1114px;
+  top: 448px;
+  width: 771px;
+  height: 415px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle18 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.last7Days2 {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 85.7328%;
+  right: 4.2802%;
+  top: calc(50% - 183px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.combinedShape {
+  position: absolute;
+  left: 261px;
+  top: 78px;
+  width: 248.8837px;
+  height: 231.0026px;
+  overflow: visible;
+}
+.icon13 {
+  width: 100%;
+  height: 100%;
+}
+.supportTracker {
+  color: #161616;
+  font-size: 18px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 2.7237%;
+  right: 78.5992%;
+  top: calc(50% - 178.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._163 {
+  color: #161616;
+  font-size: 42px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 7.7821%;
+  right: 83.5279%;
+  top: calc(50% - 137px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._83 {
+  color: #161616;
+  font-size: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 45.0065%;
+  right: 45.5253%;
+  top: calc(50% - -9.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.completedTickets {
+  color: #161616;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 40.2075%;
+  right: 40.3372%;
+  top: calc(50% - 27.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.tickets {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.9494%;
+  right: 84.6952%;
+  top: calc(50% - 107px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.newTickets {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 2.9831%;
+  right: 85.9922%;
+  top: calc(50% - -138px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.openTickets {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 44.0986%;
+  right: 43.9689%;
+  top: calc(50% - -138px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.responseTime {
+  color: #606060;
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 83.917%;
+  right: 2.0752%;
+  top: calc(50% - -138px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._29 {
+  color: #606060;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 5.8366%;
+  right: 89.6239%;
+  top: calc(50% - -161.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._63 {
+  color: #606060;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 47.8599%;
+  right: 47.6005%;
+  top: calc(50% - -161.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._1d {
+  color: #606060;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 88.8457%;
+  right: 7.1336%;
+  top: calc(50% - -161.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.orderCard {
+  position: absolute;
+  left: 314px;
+  top: 891px;
+  width: 505px;
+  height: 475px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle19 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.graph1 {
+  position: absolute;
+  left: 137.5px;
+  top: 122px;
+  width: 230px;
+  height: 229px;
+  overflow: visible;
+}
+.icon14 {
+  width: 100%;
+  height: 100%;
+}
+.graph2 {
+  position: absolute;
+  left: 165.5px;
+  top: 150px;
+  width: 174px;
+  height: 173px;
+  overflow: visible;
+}
+.icon15 {
+  width: 100%;
+  height: 100%;
+}
+.graph3 {
+  position: absolute;
+  left: 195.5px;
+  top: 179px;
+  width: 114px;
+  height: 115px;
+  overflow: visible;
+}
+.icon16 {
+  width: 100%;
+  height: 100%;
+}
+.productOrders {
+  color: #161616;
+  font-size: 18px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 5.5446%;
+  right: 66.9307%;
+  top: calc(50% - 204.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.finished {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 9.3069%;
+  right: 78.8119%;
+  top: calc(50% - -150px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.total42459 {
+  position: absolute;
+  left: 45.5446%;
+  right: 46.1386%;
+  top: calc(50% - 2px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock2 {
+  margin-top: 1px;
+}
+.labelWrapper2 {
+  font-size: 14px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label3 {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.oval3 {
+  position: absolute;
+  left: 5.5446%;
+  right: 92.0792%;
+  top: 80.4211%;
+  bottom: 17.0526%;
+  overflow: visible;
+}
+.icon17 {
+  width: 100%;
+  height: 100%;
+}
+.oval4 {
+  position: absolute;
+  left: 5.5446%;
+  right: 92.0792%;
+  top: 86.1053%;
+  bottom: 11.3684%;
+  overflow: visible;
+}
+.icon18 {
+  width: 100%;
+  height: 100%;
+}
+.oval5 {
+  position: absolute;
+  left: 5.5446%;
+  right: 92.0792%;
+  top: 91.5789%;
+  bottom: 5.8947%;
+  overflow: visible;
+}
+.icon19 {
+  width: 100%;
+  height: 100%;
+}
+._23043 {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 86.1386%;
+  right: 5.5446%;
+  top: calc(50% - -150px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.pending {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 9.3069%;
+  right: 78.8119%;
+  top: calc(50% - -177px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._14658 {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 86.5347%;
+  right: 5.5446%;
+  top: calc(50% - -177px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.rejected {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 9.3069%;
+  right: 78.4158%;
+  top: calc(50% - -203px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._4758 {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 87.7228%;
+  right: 5.7426%;
+  top: calc(50% - -203px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.salesCard {
+  position: absolute;
+  left: 847px;
+  top: 891px;
+  width: 505px;
+  height: 475px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle20 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.chart2 {
+  position: absolute;
+  left: 21.9802%;
+  right: 21.9802%;
+  top: 30.1053%;
+  bottom: 8.4211%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.path4 {
+  position: absolute;
+  left: 11.6608%;
+  right: 17.6678%;
+  top: 11.6438%;
+  bottom: 28.0822%;
+  overflow: visible;
+  filter: drop-shadow(0px 4px 10px #00000046);
+}
+.icon20 {
+  width: 100%;
+  height: 100%;
+}
+.path22 {
+  position: absolute;
+  left: 19.0813%;
+  right: 19.4346%;
+  top: 20.5479%;
+  bottom: 15.0685%;
+  overflow: visible;
+  filter: drop-shadow(0px 6px 10px #00000052);
+}
+.icon21 {
+  width: 100%;
+  height: 100%;
+}
+.path32 {
+  position: absolute;
+  left: 11.3074%;
+  right: 11.3074%;
+  top: 6.8493%;
+  bottom: 6.5068%;
+  overflow: visible;
+}
+.icon22 {
+  width: 100%;
+  height: 100%;
+}
+.jan {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 44.8763%;
+  right: 44.1696%;
+  top: calc(50% - 137.5px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.fab {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 90.4594%;
+  right: 0;
+  top: calc(50% - 68.5px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.mar {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 90.4594%;
+  right: 0;
+  top: calc(50% - -80px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.apr {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 45.583%;
+  right: 44.8763%;
+  top: calc(50% - -137.5px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.may {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 3.5336%;
+  right: 85.5124%;
+  top: calc(50% - -78.5px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.jun {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 90.4594%;
+  top: calc(50% - 66.5px);
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.salesStats {
+  color: #161616;
+  font-size: 18px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.5545%;
+  right: 76.4356%;
+  top: calc(50% - 207.5px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.last6Months {
+  color: #606060;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.1584%;
+  right: 73.6634%;
+  top: calc(50% - 187.5px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.sales {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 8.1188%;
+  right: 85.7426%;
+  top: calc(50% - 158px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval6 {
+  position: absolute;
+  left: 4.7525%;
+  right: 93.0693%;
+  top: 15.5789%;
+  bottom: 82.1053%;
+  overflow: visible;
+}
+.icon23 {
+  width: 100%;
+  height: 100%;
+}
+.ovalCopy3 {
+  position: absolute;
+  left: 15.4455%;
+  right: 82.3762%;
+  top: 15.5789%;
+  bottom: 82.1053%;
+  overflow: visible;
+}
+.icon24 {
+  width: 100%;
+  height: 100%;
+}
+.moreVertical {
+  position: absolute;
+  left: 486px;
+  top: 22px;
+  width: 2px;
+  height: 16px;
+  overflow: visible;
+}
+.icon25 {
+  width: 100%;
+  height: 100%;
+}
+.salesCopy {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 18.2178%;
+  right: 75.6436%;
+  top: calc(50% - 158px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.activityCard {
+  position: absolute;
+  left: 1380px;
+  top: 891px;
+  width: 505px;
+  height: 475px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle21 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.activityTimeline {
+  color: #161616;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4.5545%;
+  right: 64.5545%;
+  top: calc(50% - 208.5px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.list1 {
+  position: absolute;
+  left: 4.5545%;
+  right: 11.4851%;
+  top: 12.4211%;
+  bottom: 76.8421%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.clientMeeting {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 11.7925%;
+  right: 62.9717%;
+  top: calc(50% - 17px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.bonbonMacaroonJell {
+  color: #606060;
+  font-size: 12px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 12.0283%;
+  right: -0.4717%;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._25MinsAgo {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 12.0283%;
+  right: 70.9906%;
+  top: calc(50% - -19px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval7 {
+  position: absolute;
+  left: 0;
+  right: 90.8019%;
+  top: 19.6078%;
+  bottom: 3.9216%;
+  overflow: visible;
+}
+.icon26 {
+  width: 100%;
+  height: 100%;
+}
+.plus {
+  position: absolute;
+  left: 13px;
+  top: 23px;
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+}
+.icon27 {
+  width: 100%;
+  height: 100%;
+}
+.list2 {
+  position: absolute;
+  left: 4.5545%;
+  right: 30.8911%;
+  top: 30.1053%;
+  bottom: 59.1579%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.emailNewsletter {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 15.3374%;
+  right: 46.6258%;
+  top: calc(50% - 17px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.cupcakeGummiBears {
+  color: #606060;
+  font-size: 12px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 15.6442%;
+  right: -0.9202%;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._25MinsAgo2 {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 15.6442%;
+  right: 62.2699%;
+  top: calc(50% - -19px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval8 {
+  position: absolute;
+  left: 0;
+  right: 88.0368%;
+  top: 19.6078%;
+  bottom: 3.9216%;
+  overflow: visible;
+}
+.icon28 {
+  width: 100%;
+  height: 100%;
+}
+.info {
+  position: absolute;
+  left: 11px;
+  top: 21px;
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+}
+.icon29 {
+  width: 100%;
+  height: 100%;
+}
+.list3 {
+  position: absolute;
+  left: 4.5545%;
+  right: 33.6634%;
+  top: 47.7895%;
+  bottom: 41.4737%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.planWebinar {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 16.0256%;
+  right: 52.5641%;
+  top: calc(50% - 17px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.candyIceCreamCake {
+  color: #606060;
+  font-size: 12px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 16.3462%;
+  right: -0.641%;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._25MinsAgo3 {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 16.3462%;
+  right: 60.5769%;
+  top: calc(50% - -19px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval9 {
+  position: absolute;
+  left: 0;
+  right: 87.5%;
+  top: 19.6078%;
+  bottom: 3.9216%;
+  overflow: visible;
+}
+.icon30 {
+  width: 100%;
+  height: 100%;
+}
+.check {
+  position: absolute;
+  left: 12px;
+  top: 24px;
+  width: 16px;
+  height: 11px;
+  overflow: visible;
+}
+.icon31 {
+  width: 100%;
+  height: 100%;
+}
+.list4 {
+  position: absolute;
+  left: 4.5545%;
+  right: 22.1782%;
+  top: 65.4737%;
+  bottom: 23.7895%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.launchWebsite {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.5135%;
+  right: 54.8649%;
+  top: calc(50% - 17px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.candyIceCreamCake2 {
+  color: #606060;
+  font-size: 12px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.7838%;
+  right: 0;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._25MinsAgo4 {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.7838%;
+  right: 66.7568%;
+  top: calc(50% - -19px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval10 {
+  position: absolute;
+  left: 0;
+  right: 89.4595%;
+  top: 19.6078%;
+  bottom: 3.9216%;
+  overflow: visible;
+}
+.icon32 {
+  width: 100%;
+  height: 100%;
+}
+.plus2 {
+  position: absolute;
+  left: 13px;
+  top: 23px;
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+}
+.icon33 {
+  width: 100%;
+  height: 100%;
+}
+.list5 {
+  position: absolute;
+  left: 4.5545%;
+  right: 22.7723%;
+  top: 83.1579%;
+  bottom: 6.1053%;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.marketing {
+  color: #606060;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.624%;
+  right: 65.9401%;
+  top: calc(50% - 17px);
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.candyIceCreamCake3 {
+  color: #606060;
+  font-size: 12px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.8965%;
+  right: -0.8174%;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+._25MinsAgo5 {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 13.8965%;
+  right: 66.485%;
+  top: calc(50% - -19px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.oval11 {
+  position: absolute;
+  left: 0;
+  right: 89.3733%;
+  top: 19.6078%;
+  bottom: 3.9216%;
+  overflow: visible;
+}
+.icon34 {
+  width: 100%;
+  height: 100%;
+}
+.plus3 {
+  position: absolute;
+  left: 13px;
+  top: 23px;
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+}
+.icon35 {
+  width: 100%;
+  height: 100%;
+}
+.rectangle22 {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 280px;
+  height: 1400px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px 0px #0000002b, inset 0px 1px 3px 0px #00000080;
+}
+.pages {
+  position: absolute;
+  left: 35px;
+  top: 884px;
+  width: 208px;
+  height: 398px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.lock {
+  position: absolute;
+  left: 0;
+  top: 41px;
+  width: 16px;
+  height: 17.7778px;
+  overflow: visible;
+}
+.icon36 {
+  width: 100%;
+  height: 100%;
+}
+.clock {
+  position: absolute;
+  left: 0;
+  top: 84px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon37 {
+  width: 100%;
+  height: 100%;
+}
+.alertTriangle {
+  position: absolute;
+  left: 0;
+  top: 125px;
+  width: 16px;
+  height: 14px;
+  overflow: visible;
+}
+.icon38 {
+  width: 100%;
+  height: 100%;
+}
+.anchor {
+  position: absolute;
+  left: 0;
+  top: 164px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon39 {
+  width: 100%;
+  height: 100%;
+}
+.user {
+  position: absolute;
+  left: 1px;
+  top: 205px;
+  width: 14px;
+  height: 16px;
+  overflow: visible;
+}
+.icon40 {
+  width: 100%;
+  height: 100%;
+}
+.helpCircle {
+  position: absolute;
+  left: 0;
+  top: 246px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon41 {
+  width: 100%;
+  height: 100%;
+}
+.info2 {
+  position: absolute;
+  left: 0;
+  top: 287px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon42 {
+  width: 100%;
+  height: 100%;
+}
+.search {
+  position: absolute;
+  left: 1px;
+  top: 328px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon43 {
+  width: 100%;
+  height: 100%;
+}
+.file {
+  position: absolute;
+  left: 2px;
+  top: 369px;
+  width: 14px;
+  height: 17.5px;
+  overflow: visible;
+}
+.icon44 {
+  width: 100%;
+  height: 100%;
+}
+.authenticationComin {
+  position: absolute;
+  left: 12.9808%;
+  right: 22.1154%;
+  top: calc(50% - -15px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock3 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock4 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock5 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock6 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock7 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock8 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock9 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock10 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock11 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.pAGES {
+  color: #999;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 76.4423%;
+  top: calc(50% - 181px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.forms {
+  position: absolute;
+  left: 35px;
+  top: 669px;
+  width: 208px;
+  height: 193px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.formElementsFormL {
+  position: absolute;
+  left: 12.9808%;
+  right: 25.4808%;
+  top: calc(50% - -15px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock12 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock13 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock14 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock15 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.fORMS {
+  color: #999;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 74.5192%;
+  top: calc(50% - 78.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 83px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon45 {
+  width: 100%;
+  height: 100%;
+}
+.fileText {
+  position: absolute;
+  left: 1px;
+  top: 123px;
+  width: 14px;
+  height: 17.5px;
+  overflow: visible;
+}
+.icon46 {
+  width: 100%;
+  height: 100%;
+}
+.checkCircle {
+  position: absolute;
+  left: 0;
+  top: 164px;
+  width: 16px;
+  height: 16.8px;
+  overflow: visible;
+}
+.icon47 {
+  width: 100%;
+  height: 100%;
+}
+.copy {
+  position: absolute;
+  left: 0;
+  top: 43px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon48 {
+  width: 100%;
+  height: 100%;
+}
+.uIElements {
+  position: absolute;
+  left: 35px;
+  top: 412px;
+  width: 208px;
+  height: 235px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.gridColorsCardTab {
+  position: absolute;
+  left: 12.9808%;
+  right: 36.5385%;
+  top: calc(50% - -15.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock16 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock17 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock18 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock19 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock20 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.layout {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon49 {
+  width: 100%;
+  height: 100%;
+}
+.rectangle23 {
+  position: absolute;
+  left: 0;
+  right: 97.0085%;
+  top: 71.0638%;
+  bottom: 26.2884%;
+  outline: solid 2px #606060;
+  outline-offset: -1px;
+}
+.rectangle24 {
+  position: absolute;
+  left: 4.7009%;
+  right: 92.3077%;
+  top: 71.0638%;
+  bottom: 26.2884%;
+  outline: solid 2px #606060;
+  outline-offset: -1px;
+}
+.rectangle25 {
+  position: absolute;
+  left: 4.7009%;
+  right: 92.3077%;
+  top: 75.2246%;
+  bottom: 22.1277%;
+  outline: solid 2px #606060;
+  outline-offset: -1px;
+}
+.rectangle26 {
+  position: absolute;
+  left: 0;
+  right: 97.0085%;
+  top: 75.2246%;
+  bottom: 22.1277%;
+  outline: solid 2px #606060;
+  outline-offset: -1px;
+}
+.archive {
+  position: absolute;
+  left: 0;
+  top: 209px;
+  width: 16px;
+  height: 13px;
+  overflow: visible;
+}
+.icon50 {
+  width: 100%;
+  height: 100%;
+}
+.droplet {
+  position: absolute;
+  left: 0;
+  top: 84px;
+  width: 16px;
+  height: 20px;
+  overflow: visible;
+}
+.icon51 {
+  width: 100%;
+  height: 100%;
+}
+.creditCard {
+  position: absolute;
+  left: 0;
+  top: 129px;
+  width: 16px;
+  height: 12px;
+  overflow: visible;
+}
+.icon52 {
+  width: 100%;
+  height: 100%;
+}
+.uIELEMENTS {
+  color: #999;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 53.3654%;
+  top: calc(50% - 99.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.apps {
+  position: absolute;
+  left: 35px;
+  top: 198px;
+  width: 99px;
+  height: 193px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.emailChatTodoCale {
+  position: absolute;
+  left: 27.2727%;
+  right: -1.0101%;
+  top: calc(50% - -15px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock21 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock22 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock23 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock24 {
+  margin-top: 1px;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.aPPS {
+  color: #999;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 60.6061%;
+  top: calc(50% - 78.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.mail {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 16px;
+  height: 13.3333px;
+  overflow: visible;
+}
+.icon53 {
+  width: 100%;
+  height: 100%;
+}
+.messageSquare {
+  position: absolute;
+  left: 1px;
+  top: 82px;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+.icon54 {
+  width: 100%;
+  height: 100%;
+}
+.checkSquare {
+  position: absolute;
+  left: 1px;
+  top: 123px;
+  width: 16px;
+  height: 15.1579px;
+  overflow: visible;
+}
+.icon55 {
+  width: 100%;
+  height: 100%;
+}
+.calendar {
+  position: absolute;
+  left: 1px;
+  top: 163px;
+  width: 16px;
+  height: 17.8824px;
+  overflow: visible;
+}
+.icon56 {
+  width: 100%;
+  height: 100%;
+}
+.dashboard {
+  position: absolute;
+  left: 22px;
+  top: 62px;
+  width: 236px;
+  height: 122px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle27 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 36.0656%;
+  bottom: 34.4262%;
+  border-radius: 4px;
+  background-image: linear-gradient(261.2deg, #9e94ffff 0%, #7e72f2ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: -1px 1px 8px 0px #7e72f294;
+}
+.rectangleCopy8 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.6393%;
+  bottom: 68.8525%;
+  border-radius: 4px;
+  background-color: #ececec;
+  box-shadow: -1px 1px 8px 0px #7e72f294;
+}
+.dashboardAnalytics {
+  position: absolute;
+  left: 5.5085%;
+  right: 50.4237%;
+  top: 50%;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.textBlock25 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock26 {
+  margin-top: 1px;
+}
+.labelWrapper3 {
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label4 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.label5 {
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock27 {
+  margin-top: 1px;
+}
+.labelWrapper4 {
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label6 {
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.chevronDown {
+  position: absolute;
+  left: 213px;
+  top: 15px;
+  width: 10px;
+  height: 5px;
+  overflow: visible;
+}
+.icon57 {
+  width: 100%;
+  height: 100%;
+}
+.circle {
+  position: absolute;
+  left: 16px;
+  top: 58px;
+  width: 10px;
+  height: 10px;
+  overflow: visible;
+}
+.icon58 {
+  width: 100%;
+  height: 100%;
+}
+.circle2 {
+  position: absolute;
+  left: 16px;
+  top: 97px;
+  width: 10px;
+  height: 10px;
+  overflow: visible;
+}
+.icon59 {
+  width: 100%;
+  height: 100%;
+}
+.home {
+  position: absolute;
+  left: 13px;
+  top: 11px;
+  width: 14px;
+  height: 15.5556px;
+  overflow: visible;
+}
+.icon60 {
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  position: absolute;
+  left: 21px;
+  top: 21px;
+  width: 239px;
+  height: 27px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.vuesax {
+  color: #7e72f2;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 20.0837%;
+  right: 45.6067%;
+  top: 50%;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.logo2 {
+  position: absolute;
+  left: 0;
+  right: 84.1004%;
+  top: 0;
+  bottom: 0;
+  background-image:/* webpackIgnore: true */ url('/assets/logo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.oval12 {
+  position: absolute;
+  left: 92.4686%;
+  right: 0;
+  top: 3.7037%;
+  bottom: 29.6296%;
+  overflow: visible;
+}
+.icon61 {
+  width: 100%;
+  height: 100%;
+}
+.navbar {
+  position: absolute;
+  left: 314px;
+  top: 30px;
+  width: 1570px;
+  height: 62px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rectangle28 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px #0002;
+}
+.english {
+  color: #2c2c2c;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 81.0828%;
+  right: 15.0955%;
+  top: calc(50% - -1px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.johnDoe {
+  color: #2c2c2c;
+  font-size: 16px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 91.3376%;
+  right: 3.758%;
+  top: calc(50% - 7px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.available {
+  color: #2c2c2c;
+  font-size: 11px;
+  font-weight: 300;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 92.7389%;
+  right: 4.1401%;
+  top: calc(50% - -9.5px);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.checkSquare2 {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 19px;
+  height: 18px;
+  overflow: visible;
+}
+.icon62 {
+  width: 100%;
+  height: 100%;
+}
+.messageSquare2 {
+  position: absolute;
+  left: 63px;
+  top: 22px;
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+}
+.icon63 {
+  width: 100%;
+  height: 100%;
+}
+.mail2 {
+  position: absolute;
+  left: 103px;
+  top: 23px;
+  width: 20px;
+  height: 16px;
+  overflow: visible;
+}
+.icon64 {
+  width: 100%;
+  height: 100%;
+}
+.calendar2 {
+  position: absolute;
+  left: 145px;
+  top: 21px;
+  width: 18px;
+  height: 20px;
+  overflow: visible;
+}
+.icon65 {
+  width: 100%;
+  height: 100%;
+}
+.star {
+  position: absolute;
+  left: 185px;
+  top: 21px;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}
+.icon66 {
+  width: 100%;
+  height: 100%;
+}
+.bell {
+  position: absolute;
+  left: 1354px;
+  top: 21px;
+  width: 18px;
+  height: 20px;
+  overflow: visible;
+}
+.icon67 {
+  width: 100%;
+  height: 100%;
+}
+.search2 {
+  position: absolute;
+  left: 1394px;
+  top: 22px;
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+}
+.icon68 {
+  width: 100%;
+  height: 100%;
+}
+.oval13 {
+  position: absolute;
+  left: 96.6242%;
+  right: 1.2102%;
+  top: 22.5806%;
+  bottom: 22.5806%;
+  overflow: visible;
+  filter: drop-shadow(-1px 1px 6px #0000003c);
+}
+.icon69 {
+  width: 100%;
+  height: 100%;
+}
