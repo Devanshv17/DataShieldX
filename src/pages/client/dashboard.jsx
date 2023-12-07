@@ -1,58 +1,52 @@
-import { useState } from "react";
-import Link from "next/link"
+import { useState, useEffect} from "react";
 import { Box, Button, Card, Paper, Tab, Tabs } from "@mui/material";
 import AppWindow from "@/client_applications";
+import ActiveProjects from "@/pages/client/Active_projects";
+import Navbar from "@/Navbar";
+import Chat from "@/Chat";
 
-export default function App(props = {}) {
-    const [curr, setCurr] = useState("Server Management");
-    const projects = Array(10).fill({ name: "Building a PEP LLM", text: "Test data, ignore please" });
-    return (<div style={{
-            backgroundColor: "#f6f6f6",
-            width: "100vw",
-            minHeight: "100vh",
-        }}>
-      <Paper elevation={1} style={{
-            position: "fixed",
-            top: "0",
-            zIndex: "100",
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            paddingLeft: "10px",
-            width: "100%",
-            height: "50px",
-        }}>
-        <span style={{ height: "30px", backgroundColor: "#ddd" }}>Company Name</span>
-        <Tabs value={curr} onChange={(_, n) => { setCurr(n); }}>
-          <Tab label={"Server Management"} value={"Server Management"}/>
-          <Tab label={"Chat"} value={"Chat"}/>
-          <Tab label={"Apps"} value={"Apps"}/>
-          {/*<Tab label={"Storage"} value={"Storage"}/>*/}
-        </Tabs>
-      </Paper>
-      <Box sx={{ mt: 5, p: 1 }}>
-      {curr == "Server Management" ?
-            <><h1>Active projects</h1>
-        {projects.map((el, idx) => (<Card sx={{ margin: 2, padding: 2 }}>
-            <h1>{el.name}</h1>
-            <h5>{el.text}</h5>
-            <Link href={`/client/instance?id=${idx}`}><Button variant="contained">View details</Button></Link>
-          </Card>))}</>
-            :
-                ""}
-      {curr == "Chat" ?
-            <></>
-            :
-                ""}
-      {curr == "Apps" ?
-            <AppWindow />
-            :
-                ""}
-      {/* {curr == "Storage" ?
-        <Storage />
-        :
-        ""} */}
-      </Box>
-    </div>);
+// Function component for the App
+export default function App(className, id) {
+  const [curr, setCurr] = useState("Dashboard");
+  const projects = Array(10).fill(null).map((_, i) => ({
+    name: `Project ${i + 1} Name`,
+    text: "**Project Description**",
+  }));
+
+  // Event handler for tab change
+  const handleTabChange = (event, newValue) => {
+    setCurr(newValue);
+  };
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+        if (event.data.event === 'login-with-token') {
+            const { loginToken } = "O7fvjGqoVI5d0RTLI_7-8AxVajWX_IrvBvg3Ryt7kPQ";
+            console.log('Received login token:', loginToken);
+        }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => {
+        window.removeEventListener('message', handleMessage);
+    };
+}, []);
+
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <Navbar currentTab={curr} onTabChange={handleTabChange} />
+
+        <div style={{ flex: 1, overflow: 'hidden' }}>
+            {curr === 'Chat' ? <Chat />:""}
+            {curr === 'Dashboard' ? (<ActiveProjects projects={projects} />
+        ) : (
+          ""
+        )}
+            {curr === 'Apps' ? <AppWindow /> : ""}
+        </div>
+    </div>
+);
 }
-;
+
+
+

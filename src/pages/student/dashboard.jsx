@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/Navbar';
 import AppGrid from '@/Apps';
-import Dashboard from '@/Home';
+import Dashboard from '@/pages/student/Home';
 import Chat from '@/chat';
 
 const StudentDashboard = () => {
