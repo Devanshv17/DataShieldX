@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Card, CardContent, Typography, Button, Paper, Grid, } from '@mui/material';
 export default function StudentInstance(props) {
-    const [id, setId] = useState(0);
+    const [id, setId] = useState(-1);
     const [started, setStarted] = useState(false);
     const [diag, toggleDiag] = useState(false);
     const url = "google.com";
@@ -26,6 +26,7 @@ export default function StudentInstance(props) {
             margin: "auto",
             padding: 2,
         }}>
+        		{(id !== -1) && <>
 				<span>
 					<Link href={"/student/dashboard"}><Button variant="contained" style={{ display: "inline" }}>Back</Button></Link>
 					<h1 style={{ display: "inline", marginLeft: "30px" }}>{`${id}`}</h1>
@@ -95,6 +96,7 @@ export default function StudentInstance(props) {
         </Box>
         </AccordionDetails>
         </Accordion> */}
+        	</>}
 			</Card>
 		</div>);
 }
