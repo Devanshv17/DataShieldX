@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
 import { Box, Button, Card, Paper, Tab, Tabs } from "@mui/material";
 import AppWindow from "@/client_applications";
-import ActiveProjects from "@/pages/client/Active_projects";
+import ActiveProjects from "@/Active_projects";
 import Navbar from "@/Navbar";
 import Chat from "@/Chat";
 

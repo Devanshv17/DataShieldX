@@ -1,7 +1,7 @@
 // HomeTask.jsx
 import React, { useState } from 'react';
 import { Tabs, Tab, Container, Box, Button } from '@mui/material';
-import GanttChart from '../../GanttChart';
+import GanttChart from './GanttChart';
 
 const Dashboard = () => {
   const [currTab, setCurrTab] = useState('Timeline');
