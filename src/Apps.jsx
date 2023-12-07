@@ -101,7 +101,7 @@ const AppGrid = () => {
             <Grid item xs={12}>
               <Grid container spacing={2}>
                 {filteredCards.map((card, index) => (<Grid item key={index} xs={12} sm={6} md={4}>
-                    <StoreAppCard linkTo={`/student/app/${card.name}`} name={card.name} description={card.description} image={card.image}/>
+                    <StoreAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image}/>
                   </Grid>))}
               </Grid>
             </Grid>
