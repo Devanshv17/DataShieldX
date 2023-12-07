@@ -8,6 +8,7 @@ import Instance from "./client_instance";
 import StudentDashboard from "./student_dashboard"
 import StudentInstance from "./student_instance"
 import ClientAppInstance from './client_app_instance';
+import GanttChart from './components/GanttChart';
 import { setChonkyDefaults } from 'chonky';
 import { ChonkyIconFA } from 'chonky-icon-fontawesome';
 // setChonkyDefaults({ iconComponent: ChonkyIconFA });
@@ -42,6 +43,10 @@ createRoot(document.getElementById('root')!).render(
     {
       path:"/:id",
       element:<Instance />
+    },
+    {
+      path:"/chart",
+      element:<GanttChart />
     },
     ])} />
   </StrictMode>,

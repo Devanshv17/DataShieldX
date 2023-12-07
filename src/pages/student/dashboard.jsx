@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/Navbar';
 import AppGrid from '@/Apps';
+import HomeTask from '@/Home';
 const StudentDashboard = () => {
     const [curr, setCurr] = useState('Home');
     const handleTabChange = (event, newValue) => {
@@ -9,7 +10,7 @@ const StudentDashboard = () => {
     };
     return (<>
       <Navbar currentTab={curr} onTabChange={handleTabChange}/>
-      {curr === 'Home' ? <></> : ""}
+      {curr === 'Home' ? <HomeTask /> : ""}
       {curr === 'Chat' ? <></> : ""}
       {curr === 'Apps' ? <AppGrid /> : ""}
     </>);

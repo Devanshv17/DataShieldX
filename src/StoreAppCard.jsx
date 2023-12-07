@@ -8,8 +8,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 const StoreAppCard = ({ linkTo, name = 'Lizard', description, image }) => {
-    return (<Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" alt="Card image" height="140" image={image}/>
+    return (<Card sx={{ maxWidth: 345, height: '100%', borderRadius: "10px", boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
+      <CardMedia component="img" alt="Card image" height="250" image={image}/>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}

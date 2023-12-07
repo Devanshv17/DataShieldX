@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
-import { Box, Tabs, Tab } from '@mui/material';
+import { Box, Tabs, Tab, Button } from '@mui/material';
 import StoreAppCard from './StoreAppCard';
 
 interface AppData {
@@ -63,7 +63,10 @@ const AppGrid = () => {
     setFilteredCards(filtered);
   };
 
-  const handleTabChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+  const handleTabChange = (
+    event: React.ChangeEvent<{}> | {}, // Explicitly define the event type
+    newValue: string
+  ) => {
     setCurr(newValue);
     setFilteredCards(getActiveSectionData(newValue));
   };
@@ -84,20 +87,41 @@ const AppGrid = () => {
   return (
     <div style={{
       backgroundColor: "#f6f6f6",
-      width: "100%",
-      height: "100%"
+      minHeight: '100vh'
     }}>
       <Container maxWidth="xl">
-        <Box border="1px solid #ddd" borderRadius="4px" p={2}>
+        <Box 
+        border="1px solid #ddd" 
+        boxShadow={"0px 0px 5px 0px #D1D1D1"}
+        borderRadius="10px" 
+        p={2}
+        sx={{ backgroundColor: "#FBF8F8" }}
+        >
           
-            <Grid item xs={12}>
+           <Grid item xs={12}>
               <Box mb={2} display="flex" justifyContent="center">
                 {/* Section Tabs */}
-                <Tabs value={curr} onChange={handleTabChange}>
-                  <Tab label="Installed" value="Installed" />
-                  <Tab label="Pending" value="Pending" />
-                  <Tab label="Global" value="Global" />
-                </Tabs>
+                <Button
+                  variant={curr === 'Installed' ? 'contained' : 'outlined'}
+                  onClick={() => handleTabChange({}, 'Installed')}
+                  sx={{ borderRadius: '16px 0 0 16px', flex: 1 }}
+                >
+                  Installed
+                </Button>
+                <Button
+                  variant={curr === 'Pending' ? 'contained' : 'outlined'}
+                  onClick={() => handleTabChange({}, 'Pending')}
+                  sx={{ flex: 1 }}
+                >
+                  Pending
+                </Button>
+                <Button
+                  variant={curr === 'Global' ? 'contained' : 'outlined'}
+                  onClick={() => handleTabChange({}, 'Global')}
+                  sx={{ borderRadius: '0 16px 16px 0', flex: 1 }}
+                >
+                  Global
+                </Button>
               </Box>
             </Grid>
             <Grid container spacing={2}>
