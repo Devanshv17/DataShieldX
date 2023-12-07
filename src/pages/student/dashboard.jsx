@@ -1,5 +1,5 @@
 // student_dashboard.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/Navbar';
 import AppGrid from '@/Apps';
 import HomeTask from '@/Home';
