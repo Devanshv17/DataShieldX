@@ -9,7 +9,7 @@ import Logs from '@/logs';
 //this used to be client_instance.tsx
 
 export default function Inst(props) {
-    const [id, setId] = useState(0);
+    const [id, setId] = useState(-1);
     const [started, setStarted] = useState(() => {
         // Initialize state from localStorage or default to false
         if (typeof window === 'undefined') return false;
@@ -65,6 +65,7 @@ export default function Inst(props) {
             margin: "auto",
             padding: 2,
         }}>
+        		{(id !== -1) && <>
 				<span>
 					<Button variant="contained" style={{ display: "inline" }} onClick={() => { window.history.back(); }}>Back</Button>
 					<h1 style={{ display: "inline", marginLeft: "30px" }}>{`Team ${id} server`}</h1>
@@ -110,6 +111,7 @@ export default function Inst(props) {
 				</Box>
 				</AccordionDetails>
 				</Accordion>
+			</>}
 			</Card>
 		</div>);
 }

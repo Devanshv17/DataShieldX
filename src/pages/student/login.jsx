@@ -8,13 +8,14 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 export default function SignInSide() {
+	// console.log(` ${process.env.NEXT_PUBLIC_SERVER}`);
     const [loginError, setLoginError] = useState(false);
 //     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         try {
-            const response = await fetch(`${process.env.SERVER}/student/login`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/student/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
