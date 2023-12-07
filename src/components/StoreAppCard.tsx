@@ -13,7 +13,7 @@ interface AppCardProps {
   name?: string;
   description?: string;
   buttonText?: string;
-  image?: string; // New image prop
+  image?: string;
 }
 
 const StoreAppCard: React.FC<AppCardProps> = ({linkTo, name = 'Lizard', description, image }) => {
@@ -31,7 +31,7 @@ const StoreAppCard: React.FC<AppCardProps> = ({linkTo, name = 'Lizard', descript
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Request</Button>
+        <Button>Request</Button>
         <Link to={linkTo}><Button variant="contained">Learn more</Button></Link>
       </CardActions>
     </Card>

@@ -17,11 +17,11 @@ interface AppCardProps {
 }
 
 const AppCard: React.FC<AppCardProps> = ({id, name = 'Lizard', description, image }) => {
-  const port = 8080+id;
+  // const port = 8080+id;
   const reqUrl = `http://localhost:8081`;
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" alt="Card image" height="140" image={image} />
+    <Card sx={{ maxWidth: 345, height: '100%', borderRadius: "10px", boxShadow: "0px 0px 5px 0px #D1D1D1"}}>
+      <CardMedia component="img" alt="Card image" height="250" image={image} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}
