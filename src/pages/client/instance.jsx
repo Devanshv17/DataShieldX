@@ -102,7 +102,7 @@ export default function Inst(props) {
         }}>
 				<h3>URL to server: {url}</h3>
 				<h3>Logs: </h3>
-				{id !== undefined ? (
+				{((id !== -1) && (id !== undefined) && (started)) ? (
         // Parse id to a number and pass it to teamid
         <Logs teamID={parseInt(id)}/>) : (
         // Optional: Render something else or nothing when id is undefined
