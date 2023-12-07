@@ -1,11 +1,8 @@
-// Import necessary dependencies
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import Navbar from '../../Navbar';
-import AppGrid from '../../Apps';
-import HomeTask from '../../Home';
-
+// student_dashboard.tsx
+import React, { useState } from 'react';
+import Navbar from '@/Navbar';
+import AppGrid from '@/Apps';
+import HomeTask from '@/Home';
 const StudentDashboard = () => {
   const [curr, setCurr] = useState('Home');
 
