@@ -9,7 +9,7 @@ import HomeTask from '../../Home';
 const StudentDashboard = () => {
     const [curr, setCurr] = useState('Home');
 
-    const handleTabChange = (newValue) => {
+    const handleTabChange = (event, newValue) => {
         setCurr(newValue);
     };
 
