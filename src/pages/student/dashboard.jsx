@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/Navbar';
 import AppGrid from '@/Apps';
-import HomeTask from '@/Home';
+import Dashboard from '@/Home';
 const StudentDashboard = () => {
-  const [curr, setCurr] = useState('Home');
+  const [curr, setCurr] = useState('Dashboard');
 
   const handleTabChange = (event, newValue) => {
       setCurr(newValue);
@@ -16,7 +16,7 @@ const StudentDashboard = () => {
           // Check for specific conditions if needed
           if (event.data.event === 'login-with-token') {
               // Handle the login token received from the iframe
-              const { loginToken } = "O7fvjGqoVI5d0RTLI_7-8AxVajWX_IrvBvg3Ryt7kPQ";
+              const { loginToken } = "BrouLdGIsRKRuCDT148RkuttPO59t-k0OdtqyDUuDA1";
               console.log('Received login token:', loginToken);
 
               // Perform any necessary actions with the login token
@@ -52,7 +52,7 @@ const StudentDashboard = () => {
               )}
 
               {/* Render other components based on the current tab */}
-              {curr === 'Home' ? <HomeTask /> : ""}
+              {curr === 'Dashboard' ? <Dashboard /> : ""}
               {curr === 'Apps' ? <AppGrid /> : ""}
           </div>
       </div>
