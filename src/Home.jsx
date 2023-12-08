@@ -1,8 +1,8 @@
 // HomeTask.jsx
 import React, { useState } from 'react';
 import { Box, Button } from '@mui/material';
-import GanttChart from '../../GanttChart';
-import ToggleSwitch from '../../Toggle_button';
+import GanttChart from '@/GanttChart';
+import ToggleSwitch from '@/Toggle_button';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 
