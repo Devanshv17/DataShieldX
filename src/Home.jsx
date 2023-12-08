@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <div style={{ backgroundColor: '#f6f6f6', width: '100%', minHeight: '100vh'}}>
-      <div style={{height:'100px', width:'80%'}}>
+      <div style={{height:'100px', width:'100%'}}>
         <Box border="1px solid #ddd" borderRadius="10px" p={2} sx={{ backgroundColor: "#FBF8F8" }}>
           <div style={{ marginBottom: '16px'}}>
             <Button
@@ -32,7 +32,7 @@ const Dashboard = () => {
           </div>
           <div style={{ padding: '16px' }}>
             {currTab === 'Timeline' && 
-            <div style={{borderRadius: '10px', backgroundColor: '#FFFFFF', width: '60%'}}
+            <div style={{borderRadius: '10px', backgroundColor: '#FFFFFF', width: '60%', boxShadow: '0px 0px 5px 0px grey'}}
              ><GanttChart /></div>
             }
             {currTab === 'Milestone' && (
@@ -49,3 +49,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+// #0864c4
