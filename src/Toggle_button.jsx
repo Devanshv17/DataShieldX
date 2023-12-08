@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 function ToggleSwitch() {
   // State variables to track the toggle state for each switch
@@ -66,8 +67,43 @@ function ToggleSwitch() {
     borderRadius: '50%', // To make the switch round
   };
 
+  // Profile picture style
+  const profilePictureStyle1 = {
+    position: 'absolute',
+    left: '-480%', // Adjust the positioning as needed
+    top: '125%', // Center vertically
+    transform: 'translateY(-50%)', // Center vertically
+    width: '40px', // Adjust the width as needed for a larger profile picture
+    height: '40px', // Adjust the height as needed for a larger profile picture
+    display: isToggled1 ? 'block' : 'none', // Show/hide based on switch state
+  };
+
+  // Profile picture style for the second static profile picture
+  const profilePictureStyle2 = {
+    position: 'absolute',
+    
+    left: '-510%', // Adjust the positioning as needed
+    top: '125%', // Center vertically
+    transform: 'translateY(-50%)', // Center vertically
+    width: '40px', // Adjust the width as needed for a larger profile picture
+    height: '40px',
+    color: 'red', // Adjust the height as needed for a larger profile picture
+  };
+
+  // Profile picture style for the third static profile picture
+  const profilePictureStyle3 = {
+    Color: 'white',
+    position: 'absolute',
+    left: '-495%', // Adjust the positioning as needed
+    top: '125%', // Center vertically
+    transform: 'translateY(-50%)', // Center vertically
+    width: '40px', // Adjust the width as needed for a larger profile picture
+    height: '40px',
+    color: 'blue', // Adjust the height as needed for a larger profile picture
+  };
   return (
-    <div>
+   
+      <div>
       {/* First Toggle switch */}
       <label style={switchContainerStyle} className="switch">
         <input type="checkbox" checked={isToggled1} onChange={toggleSwitch1} />
@@ -85,7 +121,7 @@ function ToggleSwitch() {
       </label>
 
       {/* Status text for End */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px',marginRight: '15px', marginLeft: '5px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', marginRight: '15px', marginLeft: '5px' }}>
         <span style={{}}>{isToggled1 ? 'STOP' : 'START'}</span>
         <span style={{}}>{isToggled2 ? 'REVERT' : 'FINISH '}</span>
       </div>

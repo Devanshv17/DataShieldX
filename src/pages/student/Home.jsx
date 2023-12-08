@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { Box, Button } from '@mui/material';
 import GanttChart from '../../GanttChart';
 import ToggleSwitch from '../../Toggle_button';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+
+
+
 
 const Dashboard = () => {
   const [currTab, setCurrTab] = useState('Timeline');
@@ -73,6 +77,9 @@ const Dashboard = () => {
     },
     // ... (additional milestones)
   ];
+
+
+  
 
 
   return (
@@ -222,7 +229,42 @@ const Dashboard = () => {
 };
 
 // New MLTCard component
-const MLTCard = ({ milestone, isExpanded, onClick }) => (
+const MLTCard = ({ milestone, isExpanded, onClick }) => 
+
+{const profilePictureStyle1 = {
+  position: 'absolute',
+  left: '0%', // Adjust the positioning as needed
+  top: '125%', // Center vertically
+  transform: 'translateY(-50%)', // Center vertically
+  width: '40px', // Adjust the width as needed for a larger profile picture
+  height: '40px', // Adjust the height as needed for a larger profile picture
+  
+};
+
+// Profile picture style for the second static profile picture
+const profilePictureStyle2 = {
+  position: 'absolute',
+  
+  left: '0%', // Adjust the positioning as needed
+  top: '125%', // Center vertically
+  transform: 'translateY(-50%)', // Center vertically
+  width: '40px', // Adjust the width as needed for a larger profile picture
+  height: '40px',
+  color: 'red', // Adjust the height as needed for a larger profile picture
+};
+
+// Profile picture style for the third static profile picture
+const profilePictureStyle3 = {
+  Color: 'white',
+  position: 'absolute',
+  left: '0%', // Adjust the positioning as needed
+  top: '125%', // Center vertically
+  transform: 'translateY(-50%)', // Center vertically
+  width: '40px', // Adjust the width as needed for a larger profile picture
+  height: '40px',
+  color: 'blue', // Adjust the height as needed for a larger profile picture
+};
+return(
   <Box
     border="1px solid #ddd"
     borderRadius="10px"
@@ -263,11 +305,22 @@ const MLTCard = ({ milestone, isExpanded, onClick }) => (
       <div style={{ marginTop: '8px' }}>
         {/* Iterating over tasks */}
         {milestone.tasks.map((task) => (
-          <div key={`task-${task.id}`} style={{ display: 'flex', alignItems: 'center', backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
-            <div style={{ flex: 1 }}>
+          <div key={`task-${task.id}`} style={{ display: 'flex', alignItems: 'center',backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
+            <div style={{ flex: 1}}>
               <h2>{task.title}</h2>
               {/* Add content for the task as needed */}
               <p>{task.description}</p>
+              <div style={{ position: 'relative' }}>
+      {/* Profile picture 1 */}
+      <AccountCircleIcon style={profilePictureStyle1} />
+
+      {/* Profile picture 2 (static) */}
+      <AccountCircleIcon style={profilePictureStyle2} />
+
+      {/* Profile picture 3 (static) */}
+      <AccountCircleIcon style={profilePictureStyle3} />
+      </div>
+              
             </div>
             <ToggleSwitch />
           </div>
@@ -275,7 +328,7 @@ const MLTCard = ({ milestone, isExpanded, onClick }) => (
       </div>
     )}
   </Box>
-);
+)};
 
 export default Dashboard;
 
