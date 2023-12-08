@@ -26,10 +26,10 @@ const StudentDashboard = () => {
   }, []);
 
   return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflowY:'auto' }}>
           <Navbar currentTab={curr} onTabChange={handleTabChange} />
 
-          <div style={{ flex: 1, overflow: 'hidden' }}>
+          <div style={{ flex: 1, overflow: 'auto' }}>
               {curr === 'Chat' ? <Chat />:""}
               {curr === 'Dashboard' ? <Dashboard /> : ""}
               {curr === 'Apps' ? <AppGrid /> : ""}
