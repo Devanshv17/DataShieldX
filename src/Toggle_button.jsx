@@ -1,36 +1,23 @@
 import React, { useState } from 'react';
 
 function ToggleSwitch() {
-  // State variable to track the toggle state
-  const [isToggled, setIsToggled] = useState(false);
+  // State variables to track the toggle state for each switch
+  const [isToggled1, setIsToggled1] = useState(false);
+  const [isToggled2, setIsToggled2] = useState(false);
 
-  // State variable to track whether the "End Task" button was clicked
-  const [endTaskClicked, setEndTaskClicked] = useState(false);
-
-  // Event handler to toggle the switch
-  const toggleSwitch = () => {
-    // Check if the "End Task" button was clicked
-    if (!endTaskClicked) {
-      // If not, toggle the switch
-      setIsToggled(!isToggled);
-    } else {
-      // Reset the "End Task" button click state
-      setEndTaskClicked(false);
+  // Event handler to toggle the first switch
+  const toggleSwitch1 = () => {
+    // Check if switch 2 is off before toggling switch 1
+    if (!isToggled2) {
+      setIsToggled1(!isToggled1);
     }
   };
 
-  // Event handler for ending the task
-  const endTask = () => {
-    // Set the "End Task" button click state to true
-    setEndTaskClicked(true);
-
-    // Check if the slider is in the "on" position
-    if (isToggled) {
-      // If it is, set it back to the "off" position
-      setIsToggled(false);
-
-      // Add logic to handle ending the task
-      console.log('Task ended');
+  // Event handler to toggle the second switch
+  const toggleSwitch2 = () => {
+    // Check if switch 1 is on before toggling switch 2
+    if (isToggled1) {
+      setIsToggled2(!isToggled2);
     }
   };
 
@@ -40,6 +27,7 @@ function ToggleSwitch() {
     display: 'inline-block',
     width: '60px', // Adjust the width as needed
     height: '34px', // Adjust the height as needed
+    marginRight: '10px', // Add margin between the switches
   };
 
   const sliderStyle = {
@@ -49,7 +37,7 @@ function ToggleSwitch() {
     left: '0',
     right: '0',
     bottom: '0',
-    backgroundColor: isToggled ? '#2196F3' : '#ccc', // Change background color when switch is toggled
+    backgroundColor: '#ccc', // Default background color when switch is off
     transition: '0.4s',
     borderRadius: '34px', // To make the switch round
   };
@@ -59,44 +47,48 @@ function ToggleSwitch() {
     content: '',
     height: '26px',
     width: '26px',
-    left: isToggled ? '30px' : '4px', // Adjust the positioning as needed
+    left: isToggled1 ? '30px' : '4px', // Adjust the positioning as needed
     bottom: '4px', // Adjust the positioning as needed
     backgroundColor: 'white', // Color of the switch
     transition: 'left 0.4s ease, background-color 0.4s ease', // Added transition properties
     borderRadius: '50%', // To make the switch round
   };
 
-  const buttonStyle = {
-    marginLeft: '10px', // Adjust the margin as needed
-    width: '60px', // Same width as the switch
-    height: '34px', // Same height as the switch
-    backgroundColor: '#ccc', // Background color when button is inactive
-    border: 'none',
-    borderRadius: '34px', // To make the button round
-    cursor: 'pointer',
-    transition: '0.4s',
+  const sliderBeforeStyle2 = {
+    position: 'absolute',
+    content: '',
+    height: '26px',
+    width: '26px',
+    left: isToggled2 ? '30px' : '4px', // Adjust the positioning as needed
+    bottom: '4px', // Adjust the positioning as needed
+    backgroundColor: 'white', // Color of the switch
+    transition: 'left 0.4s ease, background-color 0.4s ease', // Added transition properties
+    borderRadius: '50%', // To make the switch round
   };
-
-  if (isToggled) {
-    buttonStyle.backgroundColor = '#2196F3'; // Background color when switch is on
-  }
 
   return (
     <div>
-      {/* Toggle switch */}
+      {/* First Toggle switch */}
       <label style={switchContainerStyle} className="switch">
-        <input type="checkbox" checked={isToggled} onChange={toggleSwitch} />
-        <span style={sliderStyle}>
+        <input type="checkbox" checked={isToggled1} onChange={toggleSwitch1} />
+        <span style={{ ...sliderStyle, backgroundColor: isToggled1 ? '#2196F3' : '#ccc' }}>
           <span style={sliderBeforeStyle}></span>
         </span>
       </label>
 
-      {/* End Task button */}
-      <button style={buttonStyle} onClick={endTask}>
-        End Task
-      </button>
+      {/* Second Toggle switch */}
+      <label style={switchContainerStyle} className="switch">
+        <input type="checkbox" checked={isToggled2} onChange={toggleSwitch2} disabled={!isToggled1} />
+        <span style={{ ...sliderStyle, backgroundColor: isToggled2 ? '#2196F3' : '#ccc' }}>
+          <span style={sliderBeforeStyle2}></span>
+        </span>
+      </label>
 
-      <p style={{}}>{isToggled ? 'Stop Task' : 'Start Task'}</p>
+      {/* Status text for End */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px',marginRight: '15px', marginLeft: '5px' }}>
+        <span style={{}}>{isToggled1 ? 'STOP' : 'START'}</span>
+        <span style={{}}>{isToggled2 ? 'REVERT' : 'FINISH '}</span>
+      </div>
     </div>
   );
 }

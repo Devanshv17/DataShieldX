@@ -222,8 +222,7 @@ const Dashboard = () => {
 };
 
 // New MLTCard component
-const MLTCard = ({ milestone, isExpanded, onClick }) =>(
-  
+const MLTCard = ({ milestone, isExpanded, onClick }) => (
   <Box
     border="1px solid #ddd"
     borderRadius="10px"
@@ -236,38 +235,48 @@ const MLTCard = ({ milestone, isExpanded, onClick }) =>(
       cursor: 'pointer',
     }}
   >
-    <Box
-      border="1px solid #ddd"
-      borderRadius="10px"
-      p={2}
-      sx={{ backgroundColor: "#FFFFFF", maxWidth: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}
-      style={{ marginBottom: '16px' }}
-      onClick={onClick}
-    >
-      <h2>{milestone.title}</h2>
-      <p style={{ fontSize: '20px', color: '#555', marginBottom: '8px' }}><b>Project Description:</b> {milestone.project.description}</p>
-      <p style={{ fontSize: '20px', color: '#555' }}><b>Expected Completion:</b> {milestone.project.expectedCompletion}</p>
-      <span style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
-    </Box>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
+  <div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column' }} onClick={onClick}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
+        <div>
+          <h2>{milestone.title}</h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          <span style={{ fontSize: '20px', color: '#555', marginBottom: '8px' }}>
+            <b>Project Description:</b> {milestone.project.description}
+          </span>
+          <span style={{ fontSize: '20px', color: '#555', marginBottom: '8px', marginLeft: '16px' }}>
+            <b>Expected Completion:</b> {milestone.project.expectedCompletion}
+          </span>
+        </div>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', fontSize: '24px', transition: 'transform 0.3s ease', marginLeft: '8px' }}>▶</span>
+      </div>
+    </div>
+  </div>
+</div>
 
+    
     {isExpanded && (
       <div style={{ marginTop: '8px' }}>
-      {/* Iterating over tasks */}
-      {milestone.tasks.map((task) => (
-        <div key={`task-${task.id}`} style={{ display: 'flex', alignItems: 'center', backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
-          <div style={{ flex: 1 }}>
-            <h2>{task.title}</h2>
-            {/* Add content for the task as needed */}
-            <p>{task.description}</p>
+        {/* Iterating over tasks */}
+        {milestone.tasks.map((task) => (
+          <div key={`task-${task.id}`} style={{ display: 'flex', alignItems: 'center', backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
+            <div style={{ flex: 1 }}>
+              <h2>{task.title}</h2>
+              {/* Add content for the task as needed */}
+              <p>{task.description}</p>
+            </div>
+            <ToggleSwitch />
           </div>
-          <ToggleSwitch />
-        </div>
-      ))}
-    </div>
-    
-    
+        ))}
+      </div>
     )}
   </Box>
 );
 
 export default Dashboard;
+
+
