@@ -3,7 +3,7 @@ import { Box, Button, Card, Paper, Tab, Tabs } from "@mui/material";
 import AppWindow from "@/client_applications";
 import ActiveProjects from "@/Active_projects";
 import Navbar from "@/Navbar";
-import Chat from "@/Chat";
+import Chat from "@/chat";
 
 // Function component for the App
 export default function App(className, id) {
