@@ -1,7 +1,6 @@
 import React from 'react';
 import { Gantt } from 'gantt-task-react';
 import 'gantt-task-react/dist/index.css';
-
 let tasks = [
     {
         start: new Date(2020, 1, 1),
@@ -35,21 +34,6 @@ let tasks = [
     },
     // Add more tasks here
 ];
-
 export default function GanttChart() {
-    const chartStyles = {
-        taskStyle: {
-            // Customize the task bars
-            borderRadius: '5px',
-            border: '1px solid #ccc',
-        },
-        milestoneStyle: {
-            // Customize the milestone markers
-            borderRadius: '50%',
-            backgroundColor: '#ffbb54',
-            borderColor: '#ff9e0d',
-        },
-    };
-
-    return <Gantt tasks={tasks} styles={chartStyles} />;
+    return <Gantt tasks={tasks}/>;
 }

@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-const AppCard = ({ linkTo, name = 'Lizard', description, image }) => {
+const PendingAppCard = ({ linkTo, name = 'Lizard', description, image }) => {
     return (<Card sx={{ maxWidth: 345, height: '100%', borderRadius: "10px", boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
       <CardMedia component="img" alt="Card image" height="250" image={image}/>
       <CardContent>
@@ -20,11 +20,8 @@ const AppCard = ({ linkTo, name = 'Lizard', description, image }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <a href='http://localhost:8081'>
-          <Button size="small">Launch</Button>
-        </a>
         <Link href={linkTo}><Button variant="contained">Learn more</Button></Link>
       </CardActions>
     </Card>);
 };
-export default AppCard;
+export default PendingAppCard;
