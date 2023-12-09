@@ -64,7 +64,7 @@ export default function SignInSide() {
             borderRadius: '40px',
             boxShadow: '4px 4px 10px #D1D1D1',
         }}>
-          <div> <img src="/assets/logo.jpg" alt="Company Logo" width="150px" height="40px" borderRadius="50%" /></div>
+          <div> <img src="/assets/logo.jpg" marginTop="20px" alt="Company Logo" width="250px" height="60px" borderRadius="50%" /></div>
             <CssBaseline />
             
             <Typography component="h1" variant="h5" align='center'>
