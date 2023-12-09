@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, Dialog, DialogTitle } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { useState, useEffect } from "react";
@@ -10,12 +11,7 @@ import Logs from '@/logs';
 
 export default function Inst(props) {
     const [id, setId] = useState(-1);
-    const [started, setStarted] = useState(() => {
-        // Initialize state from localStorage or default to false
-        if (typeof window === 'undefined') return false;
-        const storedState = localStorage.getItem(`team${id}_started`);
-        return storedState ? JSON.parse(storedState) : false;
-    });
+    const [started, setStarted] = useState(false);
     const [extDiag, toggleExtDiag] = useState(false);
     // const [filesDiag, toggleFilesDiag] = useState(false);
     const [files, setFiles] = useState([]);
@@ -27,9 +23,18 @@ export default function Inst(props) {
     }, []);
     
     useEffect(() => {
-        // Save the current state to localStorage whenever it changes
-        if (typeof window !== 'undefined') localStorage.setItem(`team${id}_started`, JSON.stringify(started));
-    }, [started, id]);
+        //on mount: check if server on or not by querying server controller (i.e. this)
+        (async () => {
+        console.log("Getting all servers")
+        try {
+			let resp = (await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/servers`)).data;
+			if (id in Object.keys(resp)) setStarted(true)
+		}
+		catch (error) {
+			console.error('Could not reach server controller:', error);
+		}
+        })();
+    }, [id]);
     const handleButtonClick = async () => {
         try {
             if (id !== undefined) {
