@@ -20,7 +20,7 @@ const AppCard = ({ linkTo, name = 'Lizard', description, image }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <a href='http://localhost:8081'>
+        <a href='/app/code'>
           <Button size="small">Launch</Button>
         </a>
         <Link href={linkTo}><Button variant="contained">Learn more</Button></Link>

@@ -15,21 +15,21 @@ export default function SignInSide() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/student/auth`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/auth`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', 
                 },
                 body: JSON.stringify({
-                    team: parseInt(data.get("team")),
-                    username: data.get("username"),
-                    password: data.get("password"),
+                    team: data.get("team"),
+                    user: data.get("username"),
+                    pass: data.get("password"),
                 }),
             });
             if (response.ok) {
                 setLoginError(false);
                 // Redirect to /student/dashboard upon successful login
-                window.location.assign('/student/dashboard.html');
+                window.location.assign('/student/dashboard/');
             }
             else {
                 setLoginError(true);
