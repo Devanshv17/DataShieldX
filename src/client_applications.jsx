@@ -10,7 +10,7 @@ import TextField from '@mui/material/TextField';
 import { Box, Button } from '@mui/material';
 import AppCard from './HomeAppCard';
 import PendingAppCard from '@/PendingAppCard'; 
-import RequestsAppCard from '@/RequestsAppCard'; // Import PendingAppCard
+import RequestsAppCard from '@/RequestsAppCard';
 import StoreAppCard from '@/StoreAppCard';
 const installedAppsData = [
     {
@@ -19,13 +19,14 @@ const installedAppsData = [
         image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
     },
 ];
-const pendingAppsData = [
-  {
-    name: 'Figma',
-    description: 'Designing app',
-    image: 'https://imgs.search.brave.com/FdIGGfc3R9dZX9ggCvuTLVjuAb0LfOkNMSxiNmq0NrE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/ZmlnbWEuc3Zn.svg',
-  },
-];
+    
+    const apps = ['App 1', 'App 2', 'App 3'];
+    const projects = [
+      { name: 'Project A'},
+      { name: 'Project B'},
+      { name: 'Project C'},
+    ];
+
 const RequestsAppsData = [
     {
         name: 'VS Code',
@@ -49,6 +50,10 @@ const AppGrid = () => {
     const [searchValue, setSearchValue] = useState('');
     const [filteredCards, setFilteredCards] = useState(installedAppsData); // Default to Installed section
     const [curr, setCurr] = useState("Installed");
+    const [isMilestonesExpanded, setIsMilestonesExpanded] = useState(false);
+
+    const [milestonesExpanded, setMilestonesExpanded] = useState({});
+
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
     };
@@ -62,13 +67,23 @@ const AppGrid = () => {
         setCurr(newValue);
         setFilteredCards(getActiveSectionData(newValue));
     };
+
+    
+    const handleMilestones = (projectName) => {
+        setMilestonesExpanded((prev) => ({
+          ...prev,
+          [projectName]: !prev[projectName],
+        }));
+      };
+      
+
     const getActiveSectionData = (section = curr) => {
         switch (section) {
             case 'Installed':
                 return installedAppsData;
             case 'Pending':
-                return pendingAppsData;
-                case 'Requests':
+                return projects;
+            case 'Requests':
                 return RequestsAppsData;
             case 'Global':
                 return globalAppsData;
@@ -83,7 +98,7 @@ const AppGrid = () => {
                 return AppCard; // Use StoreAppCard for 'Installed' tab
             case 'Pending':
                 return PendingAppCard; 
-                case 'Requests':
+            case 'Requests':
                 return RequestsAppCard;// Use PendingAppCard for 'Pending' tab
             case 'Global':
                 return StoreAppCard; // Use HomeAppCard for 'Global' tab
@@ -91,6 +106,118 @@ const AppGrid = () => {
                 return null; // Return null or a default component for unknown tabs
         }
     };
+
+    const ProjectList = ({ projects }) => (
+        <div>
+          {projects.map((project, index) => (
+            <Project
+              key={index}
+              {...project}
+              isExpanded={milestonesExpanded[project.name]}
+              onToggleMilestones={() => handleMilestones(project.name)}
+              
+            />
+            
+          ))}
+          
+        </div>
+      );
+      
+      
+      const Project = ({ name, words, isExpanded, onToggleMilestones }) => {
+        const [hoveredIndex, setHoveredIndex] = React.useState(null);
+      
+        const handleDeleteWord = (index) => {
+          const updatedWords = [...words];
+          updatedWords.splice(index, 1);
+          // Assuming you have a function to update the state of words in your application
+          // For example: updateWords(updatedWords);
+        };
+      
+        return (
+          <div
+            style={{
+              backgroundColor: '#FFFFFF',
+              borderRadius: '10px',
+              boxShadow: '0px 0px 5px 0px #D1D1D1',
+              marginTop: '20px',
+              padding: '10px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              cursor: 'pointer',
+            }}
+            onClick={onToggleMilestones}
+          >
+            <div>
+              <h2>{name}</h2>
+              {isExpanded && (
+                <div>
+                  <p>APPS:</p>
+                  <div>
+                  {words.map((word, index) => (
+  <span key={index} style={{ marginRight: '5px' }}>
+    <div style={{ position: 'relative', display: 'inline-block' }}>
+      <button
+        style={{
+          height: '40px',
+          paddingLeft: '20px',
+          paddingRight: '40px', // Increased paddingRight to accommodate the "x" button
+          margin: '10px',
+          borderRadius: '40px',
+          backgroundColor: index === hoveredIndex ? '#1977d2' : '#FFFFFF',
+          color: index === hoveredIndex ? '#FFFFFF' : '#1977d2',
+          border: `2px solid ${index === hoveredIndex ? '#FFFFFF' : '#1977d2'}`,
+          transition: 'background-color 0.3s ease, color 0.3s ease, border 0.3s ease',
+        }}
+      >
+        {word}
+      </button>
+      <button
+        onClick={() => handleDeleteWord(index)}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: '15%', // Adjust as needed for positioning
+          transform: 'translateY(-60%)',
+          backgroundColor: '#FFFFFF',
+          color: '#DDD',
+          borderRadius: '50%',
+          border: 'none',
+          cursor: 'pointer',
+          display: 'block',
+          fontSize: '20px'
+        }}
+      >
+        x
+      </button>
+    </div>
+  </span>
+))}
+
+                  </div>
+                </div>
+              )}
+            </div>
+            <span style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
+          </div>
+        );
+      };
+      
+      
+      const projectsData = [
+        {
+          name: 'Project 1',
+          words: ['Word1', 'Word2', 'Word3', 'Word4', 'Word5', 'Word6', 'Word7', 'Word8', 'Word9', 'Word10'],
+        },
+        {
+          name: 'Project 2',
+          words: ['Apple', 'Banana', 'Orange', 'Grapes', 'Mango', 'Pear', 'Pineapple', 'Watermelon', 'Kiwi', 'Strawberry'],
+        },
+        // Add more projects as needed
+      ];
+      
+      
 
     const ActiveCardComponent = getActiveSectionComponent();
 
@@ -140,21 +267,28 @@ const AppGrid = () => {
                                     <Grid item key={index} xs={12} sm={6} md={4}>
                                         {/* Use the dynamically determined card component with explicit props */}
                                         {ActiveCardComponent === AppCard && (
-                                            <AppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
+                                            <AppCard linkTo={`/client/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
                                         )}
-                                        {ActiveCardComponent === PendingAppCard && (
-                                            <PendingAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
-                                        )}
+                                        
                                         {ActiveCardComponent === RequestsAppCard && (
-                                            <RequestsAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
+                                            <RequestsAppCard linkTo={`/client/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
                                         )}
                                         {ActiveCardComponent === StoreAppCard && (
-                                            <StoreAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
+                                            <StoreAppCard linkTo={`/client/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
                                         )}
                                     </Grid>
                                 ))}
                             </Grid>
                         </Grid>
+
+                        {ActiveCardComponent === PendingAppCard && (
+                                            <>
+ <div>
+      <ProjectList projects={projectsData} />
+    </div>
+
+                                            </>
+                                        )}
                    
                 </Box>
             </Container>
