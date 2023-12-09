@@ -2,23 +2,8 @@ import React from "react";
 import { Card, Button, Container, Box, Grid, Link } from "@mui/material";
 
 const ActiveProjects = ({ projects }) => (
-  <Container maxWidth="xl">
-    <Box
-      border="1px solid #ddd"
-      boxShadow={"0px 0px 5px 0px #D1D1D1"}
-      borderRadius="10px"
-      p={2}
-      sx={{
-        backgroundColor: "#FBF8F8",
-        maxWidth: "85%", // Set maximum width to 80% of the screen
-        margin: "auto", // Center the container horizontally
-        padding: 10, // Add padding around the container
-        overflow: "auto",
-        maxHeight: '80vh',
-        paddingTop: 0,
-        paddingBottom: 10,
-      }}
-    >
+  <div style={{ display: 'flex', overflowY: 'auto', maxHeight: '90vh' }}>
+  <div style={{ flex: '0 0 63%', maxWidth: '63%', marginRight: '16px', marginTop: '16px', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
       <h1>Active projects</h1>
       <Grid container spacing={3}>
         {projects.map((el, idx) => (
@@ -29,7 +14,7 @@ const ActiveProjects = ({ projects }) => (
                 height: "350px",
                 borderRadius: "10px",
                 boxShadow: "0px 0px 5px 0px #D1D1D1",
-                margin: 2,
+                margin: 0,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -48,8 +33,25 @@ const ActiveProjects = ({ projects }) => (
           </Grid>
         ))}
       </Grid>
-    </Box>
-  </Container>
+  </div>
+
+<div style={{ flex: '0 0 32%', maxWidth: '32%',maxHeight: '100vh', marginRight: '32px', marginLeft: 'auto', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
+{/* Card 1 */}
+<Box border="1px solid #ddd" borderRadius="10px" p={2} sx={{ backgroundColor: "#FFFFFF", maxWidth: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
+  <h2>Next Milestone Deadline</h2>
+  <p style={{ fontSize: '20px' }}>Name: <span style={{ fontSize: '14px' }}>Project 1</span></p>
+  <p style={{ fontSize: '20px' }}>Deadline: <span style={{ fontSize: '14px' }}>2021-10-20</span></p>
+  <p style={{ fontSize: '20px' }}>Time: <span style={{ fontSize: '14px' }}>2d 3h 5m</span></p>
+</Box>
+
+<Box border="1px solid #ddd" borderRadius="10px" p={2} sx={{ backgroundColor: "#FFFFFF", maxWidth: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
+  <h2>Recived Payments</h2>
+  <p style={{ fontSize: '40px', textAlign:'center' }}> $2000</p>
+ 
+</Box>
+</div>
+</div>
+
 );
 
 export default ActiveProjects;
