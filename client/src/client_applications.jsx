@@ -10,7 +10,7 @@ import TextField from '@mui/material/TextField';
 import { Box, Button } from '@mui/material';
 import AppCard from './HomeAppCard';
 import PendingAppCard from '@/PendingAppCard'; 
-// import RequestsAppCard from '@/requestsAppCard'; // Import PendingAppCard
+import RequestsAppCard from '@/RequestsAppCard'; // Import PendingAppCard
 import StoreAppCard from '@/StoreAppCard';
 const installedAppsData = [
     {
@@ -26,11 +26,11 @@ const pendingAppsData = [
     image: 'https://imgs.search.brave.com/FdIGGfc3R9dZX9ggCvuTLVjuAb0LfOkNMSxiNmq0NrE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/ZmlnbWEuc3Zn.svg',
   },
 ];
-const requestsAppsData = [
+const RequestsAppsData = [
     {
-      name: 'Figma',
-      description: 'Designing app',
-      image: 'https://imgs.search.brave.com/FdIGGfc3R9dZX9ggCvuTLVjuAb0LfOkNMSxiNmq0NrE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/ZmlnbWEuc3Zn.svg',
+        name: 'VS Code',
+        description: 'Code editor',
+        image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
     },
   ];
 const globalAppsData = [
@@ -68,6 +68,8 @@ const AppGrid = () => {
                 return installedAppsData;
             case 'Pending':
                 return pendingAppsData;
+                case 'Requests':
+                return RequestsAppsData;
             case 'Global':
                 return globalAppsData;
             default:
@@ -80,7 +82,9 @@ const AppGrid = () => {
             case 'Installed':
                 return AppCard; // Use StoreAppCard for 'Installed' tab
             case 'Pending':
-                return PendingAppCard; // Use PendingAppCard for 'Pending' tab
+                return PendingAppCard; 
+                case 'Requests':
+                return RequestsAppCard;// Use PendingAppCard for 'Pending' tab
             case 'Global':
                 return StoreAppCard; // Use HomeAppCard for 'Global' tab
             default:
@@ -105,6 +109,9 @@ const AppGrid = () => {
         </Button>
         <Button variant={curr === 'Pending' ? 'contained' : 'outlined'} onClick={() => handleTabChange({}, 'Pending')} style={{ marginRight: '8px', width: '150px', borderRadius: '40px' }}>
             Permissions
+        </Button>
+        <Button variant={curr === 'Requests' ? 'contained' : 'outlined'} onClick={() => handleTabChange({}, 'Requests')} style={{ marginRight: '8px', width: '150px', borderRadius: '40px' }}>
+            Requests
         </Button>
         <Button variant={curr === 'Global' ? 'contained' : 'outlined'} onClick={() => handleTabChange({}, 'Global')} style={{ width: '150px', borderRadius: '40px' }}>
             Global
@@ -137,6 +144,9 @@ const AppGrid = () => {
                                         )}
                                         {ActiveCardComponent === PendingAppCard && (
                                             <PendingAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
+                                        )}
+                                        {ActiveCardComponent === RequestsAppCard && (
+                                            <RequestsAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
                                         )}
                                         {ActiveCardComponent === StoreAppCard && (
                                             <StoreAppCard linkTo={`/student/app?id=${card.name}`} name={card.name} description={card.description} image={card.image} />
