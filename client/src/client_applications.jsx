@@ -1,6 +1,3 @@
-
-
-// Apps.tsx
 import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
@@ -8,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { Box, Button } from '@mui/material';
-import AppCard from './HomeAppCard';
+import AppCard from '@/HomeAppCard';
 import PendingAppCard from '@/PendingAppCard'; 
 import RequestsAppCard from '@/RequestsAppCard';
 import StoreAppCard from '@/StoreAppCard';

@@ -63,19 +63,29 @@ export default function Inst(props) {
 			<Card sx={{
             display: "flex",
             flexDirection: "column",
+            flexWrap:"nowrap",
             alignItems: "start",
             gap: "10px",
             width: "80%",
-            height: "80%",
+//             height: "80%",
             margin: "auto",
             padding: 2,
         }}>
         		{(id !== -1) && <>
 				<span>
-					<Button variant="contained" style={{ display: "inline" }} onClick={() => { window.history.back(); }}>Back</Button>
+					<Button 
+						variant="contained" 
+						style={{ display: "inline" }} 
+						onClick={() => { window.history.back();}}>
+						Back
+					</Button>
 					<h1 style={{ display: "inline", marginLeft: "30px" }}>{`Team ${id} server`}</h1>
 				</span>
-				<Button variant="contained" onClick={() => { toggleExtDiag(true); }}>Configure installed extensions</Button>
+				<Button 
+					variant="contained" 
+					onClick={() => { toggleExtDiag(true); }}>
+					Configure installed extensions
+				</Button>
 				{/*{<Button onClick={() => {toggleFilesDiag(!filesDiag)}}>View files</Button>}*/}
 				<Dialog open={extDiag} onClose={() => { toggleExtDiag(!extDiag); }} fullWidth={true} maxWidth="lg">
 					<Box sx={{ width: "100%" }}>
@@ -91,10 +101,10 @@ export default function Inst(props) {
                             <Storage teamid={id}/>
                             </Box>
                         </Dialog>*/}
-				<Box sx={{ width: "100%" }}>
+				{/*<Box sx={{ width: "100%" }}>
 				<h2>Team Files</h2>
-				{/* <FullFileBrowser files={files} folderChain={folderChain}/> */}
-				</Box>
+				<FullFileBrowser files={files} folderChain={folderChain}/>
+				</Box>*/}
 				<Accordion sx={{ width: "100%" }}>
 				<AccordionSummary expandIcon={<ExpandMoreIcon />}><h5>Advanced Configuration</h5></AccordionSummary>
 				<AccordionDetails>

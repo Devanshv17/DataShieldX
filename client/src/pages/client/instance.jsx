@@ -4,7 +4,7 @@ import { Box, Button } from '@mui/material';
 import GanttChart from '@/GanttChart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import Navbar from '@/Navbar';
-import { Inst } from './serverM';
+import { Inst } from '@/serverM';
 
 const Dashboard = () => {
   const [isTasksExpanded, setIsTasksExpanded] = useState(false);
@@ -83,30 +83,29 @@ const Dashboard = () => {
   
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <Navbar />
-  
-      <div style={{ backgroundColor: '#f6f6f6', width: '100%', minHeight: '100vh', padding: '16px', overflowY: 'auto' }}>
-        <div style={{ height: '100px', width: '100%' }}>
-          <Button
-            variant={currTab === 'Project Management' ? 'contained' : 'outlined'}
-            onClick={(e) => handleChange(e, 'Project Management')}
-            style={{ marginRight: '8px', width: '150px', borderRadius: '40px' }}
-          >
-            Project Management
-          </Button>
-          <Button
-            variant={currTab === 'Server Management' ? 'contained' : 'outlined'}
-            onClick={(e) => handleChange(e, 'Server Management')}
-            style={{ width: '150px', borderRadius: '40px' }}
-          >
-            Server Management
-          </Button>
-        </div>
+    <div style={{ display: 'flex', flexDirection: 'column'}}>
+    	<Navbar />
+    	<div style={{ backgroundColor: '#f6f6f6', width: '100%', minHeight: '100vh', padding: '16px', overflowY: 'auto' }}>
+			<div style={{ height: '100px', width: '100%' }}>
+				<Button 
+					variant={currTab === 'Project Management' ? 'contained' : 'outlined'}
+					onClick={(e) => handleChange(e, 'Project Management')}
+					style={{ marginRight: '8px', width: '150px', borderRadius: '40px' }}
+				>
+				Project Management
+				</Button>
+				<Button
+					variant={currTab === 'Server Management' ? 'contained' : 'outlined'}
+					onClick={(e) => handleChange(e, 'Server Management')}
+					style={{ width: '150px', borderRadius: '40px' }}
+				>
+				Server Management
+				</Button>
+			</div>
         <div style={{ display: 'flex' }}>
-          {currTab === 'Project Management' && (
-            <>
-              <div style={{ display: 'flex', overflowY: 'auto', maxHeight: '90vh' }}>
+          {currTab === 'Project Management' && 
+          (<>
+        	<div style={{ display: 'flex', overflowY: 'auto' }}>
                 <div style={{ flex: '0 0 63%', maxWidth: '63%', marginRight: '16px', marginTop: '16px', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
                   {/* Card 1 */}
                   <div style={{ borderRadius: '10px', backgroundColor: '#FFFFFF', width: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
@@ -124,10 +123,9 @@ const Dashboard = () => {
                       boxShadow: "0px 0px 5px 0px #D1D1D1",
                       cursor: 'pointer',
                       overflowY: 'auto',
-                      maxHeight: '700px', // Set a specific height for the content
                     }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', overflowY: 'auto' }} onClick={handleMilestones}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} onClick={handleMilestones}>
                       <h2>Milestones</h2>
                       <span style={{ transform: isMilestonesExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
                     </div>
@@ -201,37 +199,17 @@ const Dashboard = () => {
               </div>
             </>
           )}
-          {currTab === 'Server Management' &&(
-            <>
-            <div style={{ display: 'flex', overflowY: 'auto', maxHeight: '90vh' }}>
+          {currTab === 'Server Management' &&(<>
+            <div style={{ display: 'flex', width:"100%"}}>
                 <Inst />
                 </div>
                 </>
 
           ) }
-
-
-
-
-
         </div>
       </div>
     </div>
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-  );
-                    }
+);}
 
 
 const MLTCard = ({ milestone, isExpanded, onClick }) => {
