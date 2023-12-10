@@ -23,7 +23,7 @@ export default function App(className, id) {
 		(async() => {
 			try {
 				let projs = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProjects`);
-				if (projs.status == 200) setProjects(projs.data.projects.map);
+				if (projs.status == 200) setProjects(projs.data.projects);
 				else {
 					console.log(projs)
 					throw new Error(`${projs.status}`)
