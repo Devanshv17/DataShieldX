@@ -9,6 +9,15 @@ import { Box, Button } from '@mui/material';
 import AppCard from './HomeAppCard';
 import PendingAppCard from '@/PendingAppCard'; // Import PendingAppCard
 import StoreAppCard from '@/StoreAppCard';
+
+
+const apps = ['App 1', 'App 2', 'App 3'];
+const projects = [
+      { name: 'Project A'},
+      { name: 'Project B'},
+      { name: 'Project C'},
+    ];
+
 const installedAppsData = [
     {
         name: 'VS Code',
