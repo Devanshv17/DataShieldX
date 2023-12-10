@@ -5,10 +5,15 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { Box, Button } from '@mui/material';
+
 import AppCard from '@/HomeAppCard';
 import PendingAppCard from '@/PendingAppCard'; 
 import RequestsAppCard from '@/RequestsAppCard';
 import StoreAppCard from '@/StoreAppCard';
+
+
+
+
 const installedAppsData = [
     {
         name: 'VS Code',
@@ -16,13 +21,6 @@ const installedAppsData = [
         image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
     },
 ];
-    
-    const apps = ['App 1', 'App 2', 'App 3'];
-    const projects = [
-      { name: 'Project A'},
-      { name: 'Project B'},
-      { name: 'Project C'},
-    ];
 
 const RequestsAppsData = [
     {

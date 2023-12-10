@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { Autocomplete, Card, Button, Container, Box, Grid, Dialog, TextField } from "@mui/material";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -21,6 +22,13 @@ const ActiveProjects = ({ projects }) => {
 	useEffect(() => {
 		setUsers(["user0","user1","user2"].map(el => ({username:el})));
 		setApps([{app_name:"VSCode", app_desc:"desc"}]);
+		(async () => {
+			try {
+				setApps((await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`)).data)
+			} catch (err) {
+				console.error(err)
+			}
+		})();
 	}, []); //on mount, get list of usernames and apps
 
 	return (
@@ -106,11 +114,12 @@ const ActiveProjects = ({ projects }) => {
   			project_id: String(Number(max_id)+1)
   		};
   		try {
-  			await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/createProject`, data=submit)
+  			await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/createProject`, submit)
   		} catch (err) {
   			console.log("error in creating project");
   			console.log(submit);
-  			console.err(err);
+  			console.error(err);
+  			return
   		}
   		setOpen(false)
   		setProj({
@@ -158,18 +167,6 @@ const ActiveProjects = ({ projects }) => {
         ))}
       </Grid>
   </div>
-
-{// <div style={{ flex: '0 0 32%', maxWidth: '32%',maxHeight: '100vh', marginRight: '32px', marginLeft: 'auto', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
-// {/* Card 1 */}
-// <Box border="1px solid #ddd" borderRadius="10px" p={2} sx={{ backgroundColor: "#FFFFFF", maxWidth: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
-//   <h2>Next Milestone Deadline</h2>
-//   <p style={{ fontSize: '20px' }}>Name: <span style={{ fontSize: '14px' }}>Project 1</span></p>
-//   <p style={{ fontSize: '20px' }}>Deadline: <span style={{ fontSize: '14px' }}>2021-10-20</span></p>
-//   <p style={{ fontSize: '20px' }}>Time: <span style={{ fontSize: '14px' }}>2d 3h 5m</span></p>
-// </Box>
-// 
-// </div>
-}
 </div>
 
 );
