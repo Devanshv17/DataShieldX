@@ -22,6 +22,13 @@ const installedAppsData = [
     },
 ];
 
+const apps = ['App 1', 'App 2', 'App 3'];
+const projects = [
+      { name: 'Project A'},
+      { name: 'Project B'},
+      { name: 'Project C'},
+    ];
+
 const RequestsAppsData = [
     {
         name: 'VS Code',
