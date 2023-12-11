@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const ActiveProjects = ({ projects }) => { 
 	const [open, setOpen] = useState(false);
+	const [buttonText, setButtonText] = useState("Create");
 	const [users, setUsers] = useState([]);
 	const [apps, setApps] = useState([]);
 	const [projDet, setProj] = useState({
@@ -24,7 +25,7 @@ const ActiveProjects = ({ projects }) => {
 		setApps([{app_name:"VSCode", app_desc:"desc"}]);
 		(async () => {
 			try {
-				setApps((await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`)).data)
+// 				setApps((await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`)).data)
 			} catch (err) {
 				console.error(err)
 			}
@@ -33,7 +34,8 @@ const ActiveProjects = ({ projects }) => {
 
 	return (
   <div>
-  <Dialog open={open} onClose={() => {setOpen(false)}} fullWidth>
+  
+  <Dialog open={open} onClose={() => {setOpen(false); setButtonText("Create")}} fullWidth>
 	<LocalizationProvider dateAdapter={AdapterDayjs}>
   <Card style={{display:"flex", flexDirection:"column", flexWrap:"nowrap", gap:"10px", padding:"20px", overflowY:"auto"}}>
   	<h1>Create New Project</h1>
@@ -99,11 +101,13 @@ const ActiveProjects = ({ projects }) => {
   	})}}
   	renderInput={(params) => <TextField {...params} label="Allowed Applications" />}/>
   	<Button onClick={async () => {
+		setButtonText("Loading...");
   		//find max id
-  		let max_id = "0"
+  		let max_id = 0
   		for (const proj of projects) {
-  			if (proj.project_id > max_id) max_id = proj.project_id;
+  			if (Number(proj.project_id) > max_id) max_id = Number(proj.project_id)
   		}
+  		console.log("max_id:",max_id)
   		let submit = {
   			...projDet,
   			milestones:projDet.milestones.map((el, idx) => ({...el, milestone_id:String(idx + 1)})),
@@ -111,7 +115,7 @@ const ActiveProjects = ({ projects }) => {
   				...el,
   				approval_status:"approved",
   			})),
-  			project_id: String(Number(max_id)+1)
+  			project_id: String(max_id+1)
   		};
   		try {
   			await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/createProject`, submit)
@@ -121,6 +125,7 @@ const ActiveProjects = ({ projects }) => {
   			console.error(err);
   			return
   		}
+  		setButtonText("Create")
   		setOpen(false)
   		setProj({
 		name: "",
@@ -129,10 +134,13 @@ const ActiveProjects = ({ projects }) => {
 		team:[],
 		apps:[]
 		})
-  	}} variant="contained">Create</Button>
+		window.location.reload()
+  	}} variant="contained">{buttonText}</Button>
   </Card>
   </LocalizationProvider>
   </Dialog>
+  
+  
   <div style={{backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px' }}>
       <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
       <h1>Active projects</h1>
