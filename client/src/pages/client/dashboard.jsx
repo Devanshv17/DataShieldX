@@ -12,19 +12,26 @@ export default function App(className, id) {
 	const tabParam = useSearchParams().get("tab");
 	console.log(tabParam || "Dashboard")
   const [curr, setCurr] = useState(tabParam || "Dashboard");
-  // const projects = Array(10).fill(null).map((_, i) => ({
+//   const projects = Array(10).fill(null).map((_, i) => ({
 //     name: `Project ${i + 1} Name`,
 //     text: "**Project Description**",
 //   }));
-	const [projects, setProjects] = useState([])
+	const [projects, setProjects] = useState([]);
+// 	Array(10).fill(null).map((_, i) => ({
+//     name: `Project ${i + 1} Name`,
+//     text: "**Project Description**",
+//   }))
 	
 	useEffect(() => {
 		setCurr(tabParam || "Dashboard");
 		(async() => {
 			try {
 				let projs = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProjects`);
-				if (projs.status == 200) setProjects(projs.data.projects);
-				else {
+				if (projs.status == 200) {
+					setProjects(projs.data.projects);
+					console.log("Fetched projects successfully");
+					console.log(projs.data)
+				} else {
 					console.log(projs)
 					throw new Error(`${projs.status}`)
 				}
