@@ -28,3 +28,45 @@ export const fetchLogs = async (teamId) => {
         throw error;
     }
 };
+
+export const getProjects = async () => {
+	try {
+		const resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProjects`);
+		if (resp.status == 200) {
+			console.log("Fetched projects successfully");
+			console.log(resp.data)
+			return resp.data.projects
+		}
+	} catch (error) {
+		console.error("Error getting all projects", error);
+		throw error
+	}
+}
+
+export const getProject = async(teamId) => {
+	try {
+		const resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProject`, {project_id:teamId});
+		if (resp.status == 200) {
+			console.log("Fetched projects successfully");
+			console.log(resp.data)
+			return resp.data.project
+		} else throw new Error(`Status code ${resp.status}`);
+	} catch (error) {
+		console.error(`Error getting project with id ${teamId}`, error);
+		throw error
+	}
+}
+
+export const updateProject = async(project) => {
+	try {
+		const resp = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/updateProject`, project);
+		if (resp.status == 200) {
+			console.log("Updated project successfully");
+			console.log(project)
+		} else throw new Error(`Status code ${resp.status}`);
+	} catch (error) {
+		console.error("Error in updated project with id", project.project_id);
+		console.error(error)
+		throw error
+	}
+}

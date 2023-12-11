@@ -7,16 +7,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-const AppCard = ({ linkTo, name = 'Lizard', description, image }) => {
+const AppCard = ({ linkTo, app_name, app_desc, image }) => {
     return (<Card sx={{ maxWidth: 345, height: '100%', borderRadius: "10px", boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
-      <CardMedia component="img" alt="Card image" height="250" image={image}/>
+      {image != undefined ? <CardMedia component="img" alt="Card image" height="250" image={image}/> : ""}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {name}
+          {app_name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {description ||
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}
+          {app_desc}
         </Typography>
       </CardContent>
       <CardActions>

@@ -6,6 +6,7 @@ import ActiveProjects from "@/Active_projects";
 import Navbar from "@/Navbar";
 import Chat from "@/chat";
 import {useSearchParams} from "next/navigation";
+import {getProjects} from "@/callbacks/client"
 
 // Function component for the App
 export default function App(className, id) {
@@ -26,15 +27,7 @@ export default function App(className, id) {
 		setCurr(tabParam || "Dashboard");
 		(async() => {
 			try {
-				let projs = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProjects`);
-				if (projs.status == 200) {
-					setProjects(projs.data.projects);
-					console.log("Fetched projects successfully");
-					console.log(projs.data)
-				} else {
-					console.log(projs);
-					throw new Error(`${projs.status}`);
-				}
+				setProjects( (await getProjects()) )
 			} catch (err) {
 				console.error(err)
 			}
