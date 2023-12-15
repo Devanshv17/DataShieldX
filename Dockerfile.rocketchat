@@ -1,0 +1,31 @@
+FROM node:14
+
+ENV METEOR_ALLOW_SUPERUSER=true
+
+# Install n (Node.js version manager)
+RUN npm install -g n
+
+# Install Node.js version 14.21.3
+RUN n 14.21.3
+
+# Set the working directory
+WORKDIR /app
+
+# Clone the Rocket.Chat repository
+RUN git clone https://github.com/RocketChat/Rocket.Chat.git
+
+# Change to the Rocket.Chat directory
+WORKDIR /app/Rocket.Chat
+
+# Install MeteorJS within the Rocket.Chat directory
+RUN curl https://install.meteor.com/ -o install_meteor.sh \
+    && chmod +x install_meteor.sh \
+    && ./install_meteor.sh
+
+RUN meteor npm install
+# RUN npm install
+
+EXPOSE 3000
+
+# Start the app
+CMD ["yarn", "dsv"]
