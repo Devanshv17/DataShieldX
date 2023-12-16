@@ -16,6 +16,11 @@ export default function SignInSide() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
+        const creds = {
+                    team: data.get("team"),
+                    username: data.get("username"),
+                    password: data.get("password"),
+                }
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/auth`, {
                 method: 'POST',
@@ -24,12 +29,15 @@ export default function SignInSide() {
                 },
                 body: JSON.stringify({
                     team: data.get("team"),
-                    user: data.get("username"),
-                    pass: data.get("password"),
+                    username: data.get("username"),
+                    password: data.get("password"),
                 }),
             });
             if (response.ok) {
                 setLoginError(false);
+                if (typeof window !== undefined) {//put credentials into localstorage
+                	localStorage.setItem("creds", creds)
+                }
                 // Redirect to /student/dashboard upon successful login
                 window.location.assign('/student/dashboard/');
             }
