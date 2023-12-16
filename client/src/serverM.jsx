@@ -3,7 +3,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, Dialo
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import Extensions from "@/client_extensions";
-import { startTeamServer, stopTeamServer } from '@/callbacks/client';
+import { startTeamServer, stopTeamServer, getApps } from '@/callbacks/client';
 import Logs from '@/logs';
 // import Storage from "./client_storage";
 
@@ -14,8 +14,8 @@ export default function Inst(props) {
     const [started, setStarted] = useState(false);
     const [extDiag, toggleExtDiag] = useState(false);
     // const [filesDiag, toggleFilesDiag] = useState(false);
-    const [files, setFiles] = useState([]);
-    const [folderChain, setChain] = useState([]);
+//     const [files, setFiles] = useState([]);
+//     const [folderChain, setChain] = useState([]);
     const url = "google.com";
     
     useEffect(() => {
@@ -73,24 +73,24 @@ export default function Inst(props) {
         }}>
         		{(id !== -1) && <>
 				<span>
-					<Button 
+					{/*<Button 
 						variant="contained" 
 						style={{ display: "inline" }} 
 						onClick={() => { window.history.back();}}>
 						Back
-					</Button>
+					</Button>*/}
 					<h1 style={{ display: "inline", marginLeft: "30px" }}>{`Team ${id} server`}</h1>
 				</span>
 				<Button 
 					variant="contained" 
 					onClick={() => { toggleExtDiag(true); }}>
-					Configure installed extensions
+					Configure approved apps
 				</Button>
 				{/*{<Button onClick={() => {toggleFilesDiag(!filesDiag)}}>View files</Button>}*/}
 				<Dialog open={extDiag} onClose={() => { toggleExtDiag(!extDiag); }} fullWidth={true} maxWidth="lg">
 					<Box sx={{ width: "100%" }}>
-					<DialogTitle>Team {id} server extensions</DialogTitle>
-					{id !== undefined ? (<Extensions teamid={parseInt(id)}/>) : (
+					<DialogTitle>Team {id} apps</DialogTitle>
+					{id !== undefined ? (<Extensions project={props.project}/>) : (
         // Optional: Render something else or nothing when id is undefined
         null)}
 					</Box>
