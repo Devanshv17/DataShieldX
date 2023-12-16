@@ -22,13 +22,13 @@ import {getProjects, updateProject} from "@/callbacks/client"
 
 
 
-const installedAppsData = [
-    {
-        app_name: 'VSCode',
-        app_desc: 'Code editor',
-        image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
-    },
-];
+// const installedAppsData = [
+//     {
+//         app_name: 'VSCode',
+//         app_desc: 'Code editor',
+//         image: 'https://imgs.search.brave.com/i_x3Xj7berzbEMNffR4YncVE-AcMw4MHEn6bVCps96c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/dHlwLnVzL2ZpbGUv/dnMtY29kZS5zdmc.svg',
+//     },
+// ];
 
 const globalAppsData = [
     {
@@ -46,11 +46,10 @@ const globalAppsData = [
 
 const AppGrid = () => {
     const [searchValue, setSearchValue] = useState('');
-    const [filteredCards, setFilteredCards] = useState(installedAppsData); // Default to Installed section
     const [curr, setCurr] = useState("Installed");
-	
+	const [installedAppsData, setInstalledAppsData] = useState([]);
     const [milestonesExpanded, setMilestonesExpanded] = useState({});
-
+	const [filteredCards, setFilteredCards] = useState(installedAppsData); // Default to Installed section
 	const [projectAppsData, setProjectAppsData] = useState([]);
 
     const handleSearchChange = (event) => {
@@ -65,6 +64,14 @@ const AppGrid = () => {
 			console.error("Couldn't fetch project data", err)
 		}
 	};
+	
+	useEffect(() => {
+		(async () => {try {
+			let apps = await getApps();
+			setInstalledAppsData(apps);
+			setFilteredCards(apps);
+		} catch (err) {console.error(err)}})();
+	}, []); //on mount: get installed apps from DB
 	
     useEffect(() => {
     	fetchProjectAppsData();

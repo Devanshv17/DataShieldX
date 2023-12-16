@@ -73,29 +73,6 @@ export default function StudentInstance(props) {
 						</Grid>
 					</Grid>
 				</Paper>
-				{/* <Button variant="contained" onClick={() => {toggleDiag(true)}}>Configure installed extensions</Button>
-        <Dialog open={diag} onClose={()=>{toggleDiag(!diag)}} fullWidth={true} maxWidth="lg">
-            <Box sx={{width: "100%"}}>
-            <DialogTitle>Team {id} server extensions</DialogTitle>
-            </Box>
-        </Dialog> */}
-				{/* <Accordion sx={{width:"100%"}}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}><h5>Advanced Configuration</h5></AccordionSummary>
-        <AccordionDetails>
-        <Box sx={{
-            display:"flex",
-            flexDirection:"column",
-            alignItems:"start",
-            gap:"10px",
-            width:"100%",
-        }}>
-        <h3>URL to server: {url}</h3>
-        <h3>Logs: </h3>
-        <Logs />
-        <Button variant="contained" onClick={() => setStarted(!started)}>{started ? "Force Stop" : "Start"}</Button>
-        </Box>
-        </AccordionDetails>
-        </Accordion> */}
         	</>}
 			</Card>
 		</div>);

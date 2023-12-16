@@ -40,12 +40,12 @@ const Navbar = ({ currentTab, onTabChange }) => {
         ["Dashboard", "Chat", "Apps"].includes(currentTab) ?
         (<Tabs value={currentTab} onChange={onTabChange} sx={{ flexGrow: 1 }}>
 			<Tab label="Dashboard" value="Dashboard" />
-			<Tab label="Chat" value="Chat" />
+			<Tab component="a" href={`${process.env.NEXT_PUBLIC_ROCKETCHAT}`} label="Chat" value="Chat" />
 			<Tab label="Apps" value="Apps" />
         </Tabs>) :
         (<Tabs value={currentTab} onChange={onTabChange} sx={{ flexGrow: 1 }}>
         	<Tab component="a" href="/client/dashboard" label="Dashboard" value="Dashboard" />
-			<Tab component="a" href="/client/dashboard?tab=Chat" label="Chat" value="Chat" />
+			<Tab component="a" href={`${process.env.NEXT_PUBLIC_ROCKETCHAT}`} label="Chat" value="Chat" />
         	<Tab component="a" href="/client/dashboard?tab=Apps" label="Apps" value="Apps" />
         </Tabs>)}
     </CustomPaper>

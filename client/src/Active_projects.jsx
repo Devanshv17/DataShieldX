@@ -7,6 +7,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateField } from '@mui/x-date-pickers/DateField';
 import dayjs from "dayjs";
 import Link from "next/link";
+import {createProject, getUsers, generateMilestones} from "@/callbacks/client";
 
 const ActiveProjects = ({ projects }) => { 
 	const [open, setOpen] = useState(false);
@@ -21,10 +22,10 @@ const ActiveProjects = ({ projects }) => {
 		apps:[]
 	});
 	useEffect(() => {
-		setUsers(["user0","user1","user2"].map(el => ({username:el})));
-		setApps([{app_name:"VSCode", app_desc:"desc"}]);
 		(async () => {
 			try {
+				setUsers(await getUsers());
+				setApps([{app_name:"VSCode", app_desc:"desc"}]);
 // 				setApps((await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`)).data)
 			} catch (err) {
 				console.error(err)
@@ -44,9 +45,16 @@ const ActiveProjects = ({ projects }) => {
   	<div style={{display:"flex", justifyContent:"start", alignItems:"center", gap:"10px"}}>
   		<h3>Milestones</h3>
   		<Button variant="contained" onClick={async () => {
-  			// try {
-//   				let resp = await axios.
-//   			}
+  			try {
+  				let data = await generateMilestones(projDet);
+  				//resp.data = milestones: {}...
+  				setProj({
+  					...projDet,
+  					milestones: data.milestones
+  				})
+  			} catch (err) {
+  				console.error(err);
+  			}
   		}}>Generate using AI</Button>
   	</div>
   	{projDet.milestones.map((el, idx) =>
@@ -60,7 +68,7 @@ const ActiveProjects = ({ projects }) => {
   		<CloseRoundedIcon style={{height:"40px", width:"40px", cursor:"pointer"}} onClick={() => {
   		setProj({
   			...projDet,
-  			milestones:[...projDet.milestones.slice(0,idx), ...projDet.milestones.slice(idx + 1)]
+  			milestones:projDet.milestones.toSpliced(idx, 1)
   		})
   	}}/>
   	</span>
@@ -80,7 +88,7 @@ const ActiveProjects = ({ projects }) => {
   	</>))}
   	<TextField label="New Milestone" onFocus={() => {
   		//milestones has to be an array of React elements so that we can focus the latest one
-  		setProj({...projDet,milestones:[...projDet.milestones, {milestone_desc:"", completion_date:dayjs().format("YYYY/MM/DD")}]})
+  		setProj({...projDet,milestones:[...projDet.milestones, {milestone_desc:"", completion_date:dayjs().format("YYYY/MM/DD"), tasks:[]}]})
   	}}/>
   	<Autocomplete 
   		multiple 
@@ -118,12 +126,9 @@ const ActiveProjects = ({ projects }) => {
   			project_id: String(max_id+1)
   		};
   		try {
-  			await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/createProject`, submit)
+  			await createProject(submit);
   		} catch (err) {
-  			console.log("error in creating project");
-  			console.log(submit);
   			console.error(err);
-  			return
   		}
   		setButtonText("Create")
   		setOpen(false)

@@ -45,7 +45,8 @@ export const getProjects = async () => {
 
 export const getProject = async(teamId) => {
 	try {
-		const resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProject`, {project_id:teamId});
+		console.log(`getProject ${teamId}`)
+		const resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getProject?id=${teamId}`);
 		if (resp.status == 200) {
 			console.log("Fetched projects successfully");
 			console.log(resp.data)
@@ -68,5 +69,60 @@ export const updateProject = async(project) => {
 		console.error("Error in updated project with id", project.project_id);
 		console.error(error)
 		throw error
+	}
+}
+
+export const getUsers = async () => {
+	try {
+		const resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getUsers`);
+		if (resp.status == 200) {
+			console.log(resp)
+			return resp.data;
+		} else throw new Error(`Status code ${resp.status}`);
+	} catch (error) {
+		console.error("Error in getting users");
+		console.error(error);
+		throw error;
+	}
+}
+
+export const createProject = async(project) => {
+	try {
+		await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/createProject`, project);
+		console.log("Created project successfully");
+	} catch (err) {
+		console.error("error in creating project");
+		console.log(project);
+		console.error(err);
+		throw err;
+	}
+}
+
+export const generateMilestones = async(project) => {
+	try {
+		let resp = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/generateMilestones`, project);
+		if (resp.status == 200) {
+			console.log(resp);
+			return resp.data;
+		} else throw new Error(`Status code ${resp.status}`);
+	} catch (err) {
+		console.error("Error in getting milestones");
+		console.log(project);
+		console.error(err);
+		throw err;
+	}
+}
+
+export const getApps = async() =>  {
+	try {
+		let resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`);
+		if (resp.status == 200) {
+			console.log(resp)
+			return resp.data.apps
+		} else throw new Error (`Status code ${resp.status}`);
+	} catch (err) {
+		console.error("Error in getting global apps");
+		console.error(err);
+		throw err;
 	}
 }
