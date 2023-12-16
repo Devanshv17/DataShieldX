@@ -1,13 +1,17 @@
+import React, {useEffect} from 'react';
+import {useRouter} from 'next/router';
+
 export default function Chat() {
+    const router = useRouter();
+    useEffect(() => {
+	const newWindow = window.open(`${process.env.NEXT_PUBLIC_CHAT_SERVER}`, '_blank');
+
+        // Optional: You can focus on the new window if needed
+        if (newWindow) {
+            newWindow.focus();
+        }
+    })
     return(
-        <iframe
-            src="http://localhost:3000/channel/general"
-            style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-            }}
-            title="Rocket.Chat"
-        ></iframe>
-    )
+        <div /> 
+    )   
 }
