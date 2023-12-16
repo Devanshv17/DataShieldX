@@ -21,6 +21,8 @@ export default function SignInSide() {
                     username: data.get("username"),
                     password: data.get("password"),
                 }
+
+        console.log(creds)
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/auth`, {
                 method: 'POST',
