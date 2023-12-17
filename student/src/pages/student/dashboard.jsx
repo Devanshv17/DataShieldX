@@ -4,52 +4,65 @@ import Navbar from '@/Navbar';
 import AppGrid from '@/Apps';
 import Dashboard from '@/Home';
 import Chat from '@/chat';
+import {Dialog} from "@mui/material"
 import {getProject} from "@/callbacks/student"
 
 const StudentDashboard = () => {
   const [curr, setCurr] = useState('Dashboard');
   const [project, setProject] = useState("")
+  const [loading, setLoading] = useState(true)
   
-  useState(() => {//on mount: get project using team id in localstorage - creds.team
-  if (typeof window !== undefined) (async () => {
-  		try {
-  			const creds = localStorage.getItem("creds");
-  			const temp = await getProject(creds.team);
-  			console.log(temp)
-  			setProject(temp);
-  		} catch (error) {
-  			console.error(error)
-  		}
-  	})();
-  }, [])
+  useEffect(() => { //get id from localstorage + get project
+		(async () => {
+			if (typeof window === undefined) return; //do nothing during static pre-rendering
+			let creds = localStorage.getItem("creds");
+			console.log("creds")
+			let id = undefined;
+			if (creds) {
+				creds = JSON.parse(creds);
+				console.log(creds);
+				id = creds.team
+				console.log(id)
+			}
+			else {
+				setLoading("error"); //error, no team number found
+				return
+			}
+			//let the db verify if the id is really an id -> deal with its errors directly
+			try {
+				let temp = await getProject(id);
+				console.log(temp);
+				setProject(temp);
+				setLoading(false);
+				
+			} catch (err) {
+				console.error(err);
+				setLoading("error");
+			}
+		})();
+	}, []);
   
 
   const handleTabChange = (event, newValue) => {
     setCurr(newValue);
   };
-//credentials in localstorage
-//   useEffect(() => {
-//     const handleMessage = (event) => {
-//       if (event.data.event === 'login-with-token') {
-//         const { loginToken } = event.data;
-//         console.log('Received login token:', loginToken);
-//         // You can use the loginToken for further authentication or other actions
-//       }
-//     };
-//     window.addEventListener('message', handleMessage);
-// 
-//     return () => {
-//       window.removeEventListener('message', handleMessage);
-//     };
-//   }, []);
 
-  return (
+	if (loading) return (
+  	<>
+  	<div>{/*loader*/}</div>
+  	<div>Loading project data...</div>
+  	<Dialog open={(loading === 'error')} onClose={() => {}}> {/*uncloseable error dialog*/}
+  		<h1>Error loading project</h1>
+  	</Dialog>
+  	</>
+  );
+	else return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
           <Navbar currentTab={curr} onTabChange={handleTabChange} />
 
           <div style={{ flex: 1, overflow: 'hidden' }}>
               {curr === 'Chat' ? <Chat />:""}
-              {curr === 'Dashboard' ? <Dashboard /> : ""}
+              {curr === 'Dashboard' ? <Dashboard project={project} setProject={setProject}/> : ""}
               {curr === 'Apps' ? <AppGrid project={project} setProject={setProject}/> : ""}
           </div>
       </div>

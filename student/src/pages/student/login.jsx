@@ -38,7 +38,7 @@ export default function SignInSide() {
             if (response.ok) {
                 setLoginError(false);
                 if (typeof window !== undefined) {//put credentials into localstorage
-                	localStorage.setItem("creds", creds)
+                	localStorage.setItem("creds", JSON.stringify(creds))
                 }
                 // Redirect to /student/dashboard upon successful login
                 window.location.assign('/student/dashboard/');

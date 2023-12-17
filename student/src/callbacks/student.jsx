@@ -14,8 +14,8 @@ export const fetchLogs = async (teamId) => {
 
 export const getProject = async (teamId) => {
 	try {
-		let resp = await axios.get(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/getProject?id=${teamId}`)
-		return resp.data
+		let resp = await axios.get(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/getProject?id=${teamId}`)
+		return resp.data.project
 	} catch (error) {
 		console.error(`Error getting project ${teamId}`)
 		throw error;
@@ -24,7 +24,7 @@ export const getProject = async (teamId) => {
 
 export const getApps = async () => {
 	try {
-		let resp = await axios.get(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/getApps`)
+		let resp = await axios.get(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/getApps`)
 		return resp.data
 	} catch (error) {
 		console.error("Error getting apps")
@@ -34,7 +34,7 @@ export const getApps = async () => {
 
 export const requestApps = async ({team, apps}) => {
 	try {
-		let resp = await axios.post(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/requestApps`, {team, apps})
+		let resp = await axios.post(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/requestApps`, {team, apps})
 		if (resp.status == 200) console.log("Successful request apps")
 		else throw new Error(`Status code ${resp.status}`)
 	} catch (error) {
