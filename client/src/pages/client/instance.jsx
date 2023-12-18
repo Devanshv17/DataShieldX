@@ -72,7 +72,6 @@ const Dashboard = () => {
   const [currTab, setCurrTab] = useState('Project Management');
   const [project, setProject] = useState("");
 	const [loading, setLoading] = useState(true);
-	const [teamId, setId] = useState("");
 	const [users, setUsers] = useState([])
 	const [newMilestone, setNewMilestone] = useState({
 		milestone_id: "",

@@ -32,6 +32,7 @@ const StudentDashboard = () => {
 			try {
 				let temp = await getProject(id);
 				console.log(temp);
+				console.log("got project")
 				setProject(temp);
 				setLoading(false);
 				
@@ -49,23 +50,24 @@ const StudentDashboard = () => {
 
 	if (loading) return (
   	<>
-  	<div>{/*loader*/}</div>
-  	<div>Loading project data...</div>
+  	<div style={{width:"100vw", height:"100vh", display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center"}}>
+  	<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+  	<h1>Loading project data...</h1>
+  	</div>
   	<Dialog open={(loading === 'error')} onClose={() => {}}> {/*uncloseable error dialog*/}
   		<h1>Error loading project</h1>
   	</Dialog>
   	</>
   );
 	else return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-          <Navbar currentTab={curr} onTabChange={handleTabChange} />
-
-          <div style={{ flex: 1, overflow: 'hidden' }}>
-              {curr === 'Chat' ? <Chat />:""}
-              {curr === 'Dashboard' ? <Dashboard project={project} setProject={setProject}/> : ""}
-              {curr === 'Apps' ? <AppGrid project={project} setProject={setProject}/> : ""}
-          </div>
-      </div>
+      <>
+        <Navbar currentTab={curr} onTabChange={handleTabChange} />
+        <div style={{margin: "90px auto auto auto", width: "95%" }}>
+            {curr === 'Chat' ? <Chat />:""}
+            {curr === 'Dashboard' ? <Dashboard project={project} setProject={setProject}/>: ""}
+            {curr === 'Apps' ? <AppGrid project={project} setProject={setProject}/> : ""}
+        </div>
+		</>
   );
 };
 

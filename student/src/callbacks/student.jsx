@@ -32,9 +32,9 @@ export const getApps = async () => {
 	}
 }
 
-export const requestApps = async ({team, apps}) => {
+export const requestApp = async (project_id, app) => {
 	try {
-		let resp = await axios.post(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/requestApps`, {team, apps})
+		let resp = await axios.post(`${process.env.NEXT_PUBLIC_STUDENT_SERVER}/api/requestApps`, {project_id, apps:[app]})
 		if (resp.status == 200) console.log("Successful request apps")
 		else throw new Error(`Status code ${resp.status}`)
 	} catch (error) {

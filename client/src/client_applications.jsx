@@ -257,7 +257,7 @@ const AppGrid = () => {
 		<Card sx={{ maxWidth: 345, height: '100%', borderRadius: "10px", boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
 		  <CardContent>
 				<Typography gutterBottom variant="h5" component="div">{app_name}</Typography>
-				<Typography variant="body2" color="text.secondary">Team {project.team}: {project.name}</Typography>
+				<Typography variant="body2" color="text.secondary">Team {project.project_id}: {project.name}</Typography>
 		  </CardContent>
 		  <CardActions>
 				<Button variant="contained" onClick={async () => {
@@ -312,7 +312,7 @@ const AppGrid = () => {
 							Global
 					</Button>
 				</div>
-				<div display="flex" alignItems="center">
+				<div style={{display:"flex", alignItems:"center"}}>
 					<form onSubmit={handleSearchSubmit} style={{ display: 'flex', marginRight: '8px' }}>
 						<div style={{ position: 'relative' }}>
 							<IconButton type="submit" sx={{ p: '10px' }}>

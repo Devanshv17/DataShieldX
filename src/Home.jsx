@@ -1,204 +1,9 @@
 // HomeTask.jsx
 import React, { useState, useEffect } from 'react';
 import dayjs from "dayjs";
-import { Box, Button, Card, Dialog} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Box, Button, Card, Dialog, Grid, IconButton, TextField } from '@mui/material';
 import GanttChart from '@/GanttChart';
 import {getProject} from "@/callbacks/student"
-
-const UpcomingMilestone = ({milestones, handleToggleTasks, isTasksExpanded}) => {
-	const milestone = milestones.reduce((mostRecent, current) => { //greater than -> after
-		if ((new Date(mostRecent.completion_date)) > (new Date(current.completion_date))) return current; else return mostRecent;
-	},{completion_date:"2100/10/10"});
-	const [time,setTime] = useState(Math.floor((new Date(milestone.completion_date) - new Date())/1000));
-	const days = Math.floor(time/86400);
-	const hours = Math.floor((time%86400)/3600);
-	const minutes = Math.floor((time%3600)/60);
-	const seconds = time%60;
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setTime(Math.floor((new Date(milestone.completion_date) - new Date())/1000));
-		}, 1000);
-		return () => {clearInterval(interval)}
-	}, [])
-	return (<>
-		<Box border="1px solid #ddd" borderRadius="10px" p={2} sx={{ backgroundColor: "#FFFFFF", maxWidth: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
-			<h2>Upcoming Milestone</h2>
-			<h3>{milestone.milestone_desc}</h3>
-			<p style={{ fontSize: '20px' }}>Deadline: <span style={{ fontSize: '14px' }}>{milestone.completion_date}</span></p>
-			<p style={{ fontSize: '20px' }}>Time: <span style={{ fontSize: '14px' }}>
-			{days == 0 ? "" : days == 1 ? "1 day " : `${days} days `}
-			{hours == 0 ? "" : hours == 1 ? "1 hour " : `${hours} hours `}
-			{minutes == 0 ? "" : minutes == 1 ? "1 minute " : `${minutes} minutes `}
-			{seconds == 0 ? "" : seconds == 1 ? "1 second " : `${seconds} seconds `}
-			</span></p>
-		</Box>
-		<Box
-			border="1px solid #ddd"
-			borderRadius="10px"
-			p={2}
-			sx={{
-				backgroundColor: "#FFFFFF",
-				marginTop: '16px',
-				maxWidth: '100%',
-				boxShadow: "0px 0px 5px 0px #D1D1D1",
-				cursor: 'pointer',
-			}}
-			onClick={handleToggleTasks}
-		>
-			<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-				<h2>Active Tasks</h2>
-				<span style={{ transform: isTasksExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
-			</div>
-			{isTasksExpanded && (
-				<div style={{ marginTop: '8px' }}>
-				{/* Task Cards */}
-				{milestone.tasks.map(el => (<TaskDisplayCard task={el} />))}
-				</div>
-			)}
-		</Box>
-	</>)
-}
-
-
-const Dashboard = ({project, setProject}) => {
-  const [isTasksExpanded, setIsTasksExpanded] = useState(false);
-  const [isBacklogExpanded, setIsBacklogExpanded] = useState(false);
-  const [isMilestonesExpanded, setIsMilestonesExpanded] = useState(false);
-  const [currTab, setCurrTab] = useState('Project Management');
-// 	const [teamId, setId] = useState("");
-  const handleChange = (event, newValue) => {
-    setCurrTab(newValue);
-  };
-
-  const handleMilestones = () => {
-    setIsMilestonesExpanded(!isMilestonesExpanded);
-  };
-
-  const handleToggleTasks = () => {
-    setIsTasksExpanded(!isTasksExpanded);
-  };
-
-	
-
-
-	const MLTCard = ({milestone, index}) => {
-		const [isExpanded, setExpanded] = useState(false);
-
-	  const handleExpand = () => {
-			setExpanded(!isExpanded)
-	  }
-  
-	  return (
-		<Box
-			border="1px solid #ddd"
-			borderRadius="10px"
-			p={2}
-			sx={{
-			backgroundColor: "#FFFFFF",
-			marginTop: '16px',
-			maxWidth: '100%',
-			boxShadow: "0px 0px 5px 0px #D1D1D1",
-			cursor: 'pointer',
-			}}
-		>
-			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', position:"relative" }}>
-				<div style={{position:"absolute", width:"100%", height:"100%", top:"0", left:"0"}} onClick={handleExpand}></div>
-				<div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column' }}>
-					<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-						<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
-							<div>
-								<h2>{milestone.milestone_desc}</h2>
-								</div>
-								<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-								<span style={{ fontSize: '20px', color: '#555', marginBottom: '8px', marginLeft: '16px' }}><b>Expected Completion:</b> {milestone.completion_date}</span>
-							</div>
-						</div>
-						<div style={{ display: 'flex', alignItems: 'center' }}>
-							<span style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', fontSize: '24px', transition: 'transform 0.3s ease', marginLeft: '8px' }}>▶</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			{isExpanded && (
-			<div style={{ marginTop: '8px'}}>
-				{milestone.tasks.map((task) => (<TaskCard task={task} />))}
-			</div>)}
-		</Box>);
-	};
-	
-  return (
-	<div style={{ display: 'flex', flexDirection: 'column', width:"100%", height: "100%"}}>
-		<div style={{ backgroundColor: '#f6f6f6', width: '100%', minHeight: '100vh', padding: '16px', overflowY: 'auto' }}>
-			<div style={{ display: 'flex' }}>
-				<div style={{ display: 'flex', overflowY: 'auto' }}>
-					<div style={{ flex: '0 0 63%', maxWidth: '63%', marginRight: '16px', marginTop: '16px', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
-						{/* Card 1 */}
-						<div style={{ borderRadius: '10px', backgroundColor: '#FFFFFF', width: '100%', boxShadow: "0px 0px 5px 0px #D1D1D1" }}>
-							<GanttChart style={{ width: '100%' }} project={project}/>
-						</div>
-						<Box
-							border="1px solid #ddd"
-							borderRadius="10px"
-							p={2}
-							sx={{
-								backgroundColor: "#FFFFFF",
-								marginTop: '16px',
-								maxWidth: '100%',
-								boxShadow: "0px 0px 5px 0px #D1D1D1",
-								cursor: 'pointer',
-								overflowY: 'auto',
-							}}
-						>
-							<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', position:"relative"}}>
-								<div style={{position:"absolute", width:"100%", height:"100%", top:"0", left:"0"}} onClick={handleMilestones}>{/*Placeholder to grab click*/}</div>
-								<h2>Milestones</h2>
-								<span style={{ transform: isMilestonesExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
-							</div>
-							{isMilestonesExpanded && (
-								<div style={{ marginTop: '8px' }}>
-									{project.milestones.map((milestone, index) => (
-										<MLTCard
-											key={`milestoneLeftCard${milestone.milestone_id}`}
-											milestone={milestone}
-											index={index}
-										/>
-									))}
-								</div>
-							)}
-						</Box>
-					</div>
-					<div style={{ flex: '0 0 32%', maxWidth: '32%', marginRight: '32px', marginLeft: 'auto', backgroundColor: "#FBF8F8", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', overflowY: 'auto' }}>
-						<UpcomingMilestone milestones={project.milestones} handleToggleTasks={handleToggleTasks} isTasksExpanded={isTasksExpanded} />
-					</div>
-				</div>
-			</div>
-		</div>
-  </div>
-);}
-
-const TaskCard = ({task}) => {
-	return(
-<div key={`task-${task.task_id}`} style={{  backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
-	<div style={{display: 'flex', alignItems: 'center', width: "100%", height:"100%"}}>
-              <div style={{ flex: 1 }}>
-                <h2>{task.task_desc}</h2>
-                <br />
-              </div>
-              {task.status === "completed" ? (<p style={{color:"#0d0", fontSize:"30px"}}>Completed</p>) : (<p style={{color:'Orange', fontSize:'30px'}}>Pending</p>)}
-    </div>
-    <div>Assignees: {task.assignees.map((el,idx) => (idx !== task.assignees.length - 1 ? `${el.username}, ` : el.username))}</div>
-</div>)}
-
-const TaskDisplayCard = ({task}) => {
-	return (<div key={`task-${task.task_id}`} style={{  backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
-	<div style={{display: 'flex', alignItems: 'center', width: "100%", height:"100%"}}>
-                <h2>{task.task_desc}</h2>
-                <br />
-    </div>
-    <div>Assignees: {task.assignees.map((el,idx) => (idx !== task.assignees.length - 1 ? `${el.username}, ` : el.username))}</div>
-</div>)
-}
-
 
 function ToggleSwitch() {
   // State variables to track the toggle state for each switch
@@ -293,5 +98,186 @@ function ToggleSwitch() {
   );
 }
 
+
+
+
+const UpcomingMilestone = ({milestones, handleToggleTasks, isTasksExpanded}) => {
+	const milestone = milestones.reduce((mostRecent, current) => { //greater than -> after
+		if ((new Date(mostRecent.completion_date)) > (new Date(current.completion_date))) return current; else return mostRecent;
+	},{completion_date:"2100/10/10"});
+	
+	const [time,setTime] = useState(Math.floor((new Date(milestone.completion_date) - new Date())/1000));
+	
+	const days = Math.floor(time/86400);
+	const hours = Math.floor((time%86400)/3600);
+	const minutes = Math.floor((time%3600)/60);
+	const seconds = time%60;
+	
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTime(Math.floor((new Date(milestone.completion_date) - new Date())/1000));
+		}, 1000);
+		return () => {clearInterval(interval)}
+	}, [])
+	
+	return (
+	<div style={{display:"flex", flexDirection:"column", alignItems:"stretch", gap:"10px"}}>
+		<Card sx={{ p:2, borderRadius:"10px"}}>
+			<h2>Upcoming Milestone</h2>
+			<h3>{milestone.milestone_desc}</h3>
+			<p style={{ fontSize: '20px' }}>Deadline: <span style={{ fontSize: '14px' }}>{milestone.completion_date}</span></p>
+			<p style={{ fontSize: '20px' }}>Time: <span style={{ fontSize: '14px' }}>
+			{days == 0 ? "" : days == 1 ? "1 day " : `${days} days `}
+			{hours == 0 ? "" : hours == 1 ? "1 hour " : `${hours} hours `}
+			{minutes == 0 ? "" : minutes == 1 ? "1 minute " : `${minutes} minutes `}
+			{seconds == 0 ? "" : seconds == 1 ? "1 second " : `${seconds} seconds `}
+			</span></p>
+		</Card>
+		<Accordion
+			sx={{
+				borderRadius:"10px",
+			}}
+			onClick={handleToggleTasks}
+		>
+			<AccordionSummary sx={{ "& .MuiAccordionSummary-content":{display: 'flex', justifyContent: 'space-between', alignItems: 'center'} }}>
+				<h2>Active Tasks</h2>
+				<span style={{ transform: isTasksExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
+			</AccordionSummary>
+			<AccordionDetails>
+				<div style={{ marginTop: '8px' }}>
+					{milestone.tasks?.map(el => (<TaskDisplayCard task={el} />))}
+				</div>
+			</AccordionDetails>
+		</Accordion>
+	</div>)
+}
+
+
+const Dashboard = ({project, setProject}) => {
+  const [isTasksExpanded, setIsTasksExpanded] = useState(false);
+  const [isBacklogExpanded, setIsBacklogExpanded] = useState(false);
+  const [isMilestonesExpanded, setIsMilestonesExpanded] = useState(false);
+  const [currTab, setCurrTab] = useState('Project Management');
+
+  const handleChange = (event, newValue) => {
+    setCurrTab(newValue);
+  };
+
+  const handleMilestones = () => {
+    setIsMilestonesExpanded(!isMilestonesExpanded);
+  };
+
+  const handleToggleTasks = () => {
+    setIsTasksExpanded(!isTasksExpanded);
+  };
+
+
+
+	const MLTCard = ({milestone, index}) => {
+		const [isExpanded, setExpanded] = useState(false);
+  
+	  const handleExpand = () => {
+			setExpanded(!isExpanded)
+	  }
+	  
+	  return (
+		<Accordion
+			sx={{
+				backgroundColor: "#FFFFFF",
+				marginTop: '16px',
+				maxWidth: '100%',
+				boxShadow: "0px 0px 5px 0px #D1D1D1",
+				cursor: 'pointer',
+				borderRadius:"10px",
+			}}
+		>
+			<AccordionSummary onClick={handleExpand} style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', position:"relative" }}>
+			<div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column' }}>
+				<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
+						<div>
+						<h2>{milestone.milestone_desc}</h2>
+						</div>
+						<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+						<span style={{ fontSize: '20px', color: '#555', marginBottom: '8px', marginLeft: '16px' }}><b>Expected Completion:</b> {milestone.completion_date}</span>
+						</div>
+					</div>
+					<div style={{ display: 'flex', alignItems: 'center' }}>
+						<span style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', fontSize: '24px', transition: 'transform 0.3s ease', marginLeft: '8px' }}>▶</span>
+					</div>
+				</div>
+			</div>
+			</AccordionSummary>
+		  <AccordionDetails>
+				<div style={{ marginTop: '8px'}}>
+					{milestone.tasks.map((task, idx) => (<TaskCard task={task} />))}
+				</div>
+		  </AccordionDetails>
+		</Accordion>);};
+
+
+
+  return (
+	<div style={{margin: "90px auto auto auto", width: "95%" }}>
+		<Grid container spacing={2} sx={{width:"100%"}}>
+			<Grid item md={8} xs={12} >
+				<div className="content" style={{width:"100%", height:"100%", display:"flex", flexDirection:"column", alignItems:"stretch", gap:"10px"}}>
+				<Card style={{ borderRadius: '10px'}}>
+					<GanttChart style={{ width: '100%' }} project={project}/>
+				</Card>
+				<Accordion sx={{
+					borderRadius:"10px",
+					p:1,
+				}} onChange={handleMilestones}>
+					<AccordionSummary sx={{p: 0, "& .MuiAccordionSummary-content":{width: "100%", height:"100%", display: 'flex', justifyContent: 'space-between', alignItems: 'center', position:"relative"}}}>
+						{/*<div style={{position:"absolute", width:"100%", height:"100%", top:"0", left:"0", cursor:"pointer"}} onClick={handleMilestones}>{/*Placeholder to grab click}</div>*/}
+						<h2>Milestones</h2>
+						<span style={{ transform: isMilestonesExpanded ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>▶</span>
+					</AccordionSummary>
+					<AccordionDetails>
+						<div style={{ marginTop: '8px' }}>
+							{project.milestones.map((milestone, index) => (
+								<MLTCard
+									key={`milestoneLeftCard${milestone.milestone_id}`}
+									milestone={milestone}
+									index={index}
+								/>
+							))}
+						</div>
+					</AccordionDetails>
+				</Accordion>
+				</div>
+			</Grid>
+			<Grid item md={4} xs={12}>
+				<div className="content" style={{width:"100%", height:"100%"}}>
+				<UpcomingMilestone milestones={project.milestones} handleToggleTasks={handleToggleTasks} isTasksExpanded={isTasksExpanded} />
+				</div>
+			</Grid>
+		</Grid>
+	</div>
+);}
+
+const TaskCard = ({task}) => {
+	return(
+<div key={`task-${task.task_id}`} style={{  backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
+	<div style={{display: 'flex', alignItems: 'center', width: "100%", height:"100%"}}>
+              <div style={{ flex: 1 }}>
+                <h2>{task.task_desc}</h2>
+              </div>
+              {task.status === "completed" ? (<p style={{color:"#0d0", fontSize:"30px"}}>Completed</p>) : (<p style={{color:'Orange', fontSize:'30px'}}>Pending</p>)}
+    </div>
+    <div><span>Start date: {task.start_time} Expected end date: {task.end_time}</span></div>
+    <div>Assignees: {task.assignees.map((el,idx) => (idx !== task.assignees.length - 1 ? `${el.username}, ` : el.username))}</div>
+</div>)}
+
+const TaskDisplayCard = ({task}) => {
+	return (<div key={`task-${task.task_id}`} style={{  backgroundColor: "#FFFFFF", boxShadow: "0px 0px 5px 0px #D1D1D1", padding: '16px', borderRadius: '10px', marginTop: '16px' }}>
+	<div style={{display: 'flex', alignItems: 'center', width: "100%", height:"100%"}}>
+                <h2>{task.task_desc}</h2>
+                <br />
+    </div>
+    <div>Assignees: {task.assignees.map((el,idx) => (idx !== task.assignees.length - 1 ? `${el.username}, ` : el.username))}</div>
+</div>)
+}
 
 export default Dashboard;
