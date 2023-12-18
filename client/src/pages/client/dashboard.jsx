@@ -54,18 +54,14 @@ export default function App(className, id) {
 
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <>
         <Navbar currentTab={curr} onTabChange={handleTabChange} />
-
-        <div style={{ flex: 1, overflow: 'hidden' }}>
+        <div style={{margin: "90px auto auto auto", width: "95%" }}>
             {curr === 'Chat' ? <Chat />:""}
-            {curr === 'Dashboard' ? (<ActiveProjects projects={projects} />
-        ) : (
-          ""
-        )}
+            {curr === 'Dashboard' ? <ActiveProjects projects={projects} />: ""}
             {curr === 'Apps' ? <AppWindow /> : ""}
         </div>
-    </div>
+		</>
 );
 }
 

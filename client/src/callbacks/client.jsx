@@ -118,7 +118,7 @@ export const getApps = async() =>  {
 		let resp = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_CONTROLLER}/getApps`);
 		if (resp.status == 200) {
 			console.log(resp)
-			return resp.data.apps
+			return resp.data
 		} else throw new Error (`Status code ${resp.status}`);
 	} catch (err) {
 		console.error("Error in getting global apps");

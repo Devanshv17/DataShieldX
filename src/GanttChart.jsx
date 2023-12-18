@@ -41,40 +41,40 @@ export default function GanttChart({project}) {
 
     if (Array.isArray(project.milestones)) {
         for (const milestone of project.milestones) {
-            let parent_id = id;
-            id += 1;
-    
+            let task_ids = []
             if (milestone && milestone.completion_date) {
-                tasks_arr.push({
-                    start: new Date(new Date(milestone.completion_date) - 86400000),
-                    end: new Date(milestone.completion_date),
-                    name: `Milestone ID ${milestone.milestone_id}: ${milestone.milestone_desc}`,
-                    id: parent_id,
-                    type: "milestone",
-                    progress: 100,
-                    isDisabled: true,
-                    styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' },
-                })
-    
                 if (Array.isArray(milestone.tasks)) {
                     for (const task of milestone.tasks) {
+                    		id += 1
                         if (task && task.start_time && task.end_time) {
                             tasks_arr.push({
                                 start: new Date(task.start_time),
                                 end: new Date(task.end_time),
                                 name: `Task ${task.task_id} of Milestone ID ${milestone.milestone_id}: ${task.task_desc}`,
-                                id: -1,
-                                dependencies: [parent_id],
+                                id: id,
                                 type: "task",
                                 progress: 100,
                                 isDisabled: true,
                                 styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' },
                             })
+                            task_ids.push(id)
                         } else {
                             console.error("Task object is missing required properties");
                         }
                     }
                 }
+                id += 1;
+                tasks_arr.push({
+                    start: new Date(new Date(milestone.completion_date) - 86400000),
+                    end: new Date(milestone.completion_date),
+                    name: `Milestone ID ${milestone.milestone_id}: ${milestone.milestone_desc}`,
+                    id: id,
+                    type: "milestone",
+                    progress: 100,
+                    dependencies: task_ids,
+                    isDisabled: true,
+                    styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' },
+                })
             } else {
                 console.error("Milestone object is missing required properties");
             }
