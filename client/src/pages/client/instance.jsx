@@ -73,6 +73,7 @@ const Dashboard = () => {
   const [project, setProject] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [users, setUsers] = useState([])
+	const [id, setId] = useState(-1)
 	const [newMilestone, setNewMilestone] = useState({
 		milestone_id: "",
 		milestone_desc:"",

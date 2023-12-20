@@ -64,12 +64,12 @@ const Navbar = ({ currentTab, onTabChange }) => {
 				<Link href="/client/dashboard" onClick={() => {onTabChange(null, "Dashboard")}}><img src="/assets/logo.jpg" alt="Company Logo" width="150" height="40" borderRadius="50%"/></Link>
 				<h5 style={{fontSize:"20pt"}}>DataShieldX</h5>
 					{["Dashboard", "Chat", "Apps"].includes(currentTab) ?
-					((<Tabs value={currentTab} onChange={(e, newVal) => {newVal !== "Chat" && onTabChange(null, newVal)}} sx={tabsStyle}>
+					(<Tabs value={currentTab} onChange={(e, newVal) => {newVal !== "Chat" && onTabChange(null, newVal)}} sx={tabsStyle}>
 						<Tab label="Dashboard" value="Dashboard" />
 						<Tab component="a" href={`${process.env.NEXT_PUBLIC_ROCKETCHAT}`} label="Chat" value="Chat" />
 						<Tab label="Apps" value="Apps" />
 					</Tabs>) :
-					((<Tabs value={currentTab} onChange={(e, newVal) => {newVal !== "Chat" && onTabChange(null, newVal)}} sx={tabsStyle}>
+					(<Tabs value={currentTab} onChange={(e, newVal) => {newVal !== "Chat" && onTabChange(null, newVal)}} sx={tabsStyle}>
 						<Tab component="a" href="/client/dashboard" label="Dashboard" value="Dashboard" />
 						<Tab component="a" href={`${process.env.NEXT_PUBLIC_ROCKETCHAT}`} label="Chat" value="Chat" />
 						<Tab component="a" href="/client/dashboard?tab=Apps" label="Apps" value="Apps" />
